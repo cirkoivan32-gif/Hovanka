@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Codevanta — Software & AI Solutions</title>
+  <meta name="description" content="Codevanta builds software, AI and market analytics tools." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="logo">◼</span>
+        <span class="brand-name" id="brandName">Codevanta</span>
+      </div>
+
+      <nav class="menu">
+        <a href="#products">Products</a>
+        <a href="#tech">Technology</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn-sm">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Software, AI & Market Analytics.</h1>
+          <p class="lead">
+            Codevanta builds modern software products: AI-driven analytics, automated monitoring,
+            and scalable cloud systems — designed for performance and reliability.
+          </p>
+
+          <div class="cta">
+            <a class="btn" href="#contact">Get in touch</a>
+            <a class="btn btn-ghost" href="#products">View products</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-num">Low latency</div>
+              <div class="stat-label">Data processing pipelines</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">ML ready</div>
+              <div class="stat-label">Training & deployment workflows</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">Secure</div>
+              <div class="stat-label">Best-practice engineering</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="chip">Demo</div>
+            <div class="chip chip-muted">v1</div>
+          </div>
+          <h3>Product Snapshot</h3>
+          <p class="muted">
+            A clean landing page ready for GitHub Pages. Edit products and links in minutes.
+          </p>
+
+          <div class="list">
+            <div class="list-item">
+              <span>✓</span>
+              <span>Single-page layout with sections</span>
+            </div>
+            <div class="list-item">
+              <span>✓</span>
+              <span>Responsive design</span>
+            </div>
+            <div class="list-item">
+              <span>✓</span>
+              <span>Contact email + socials</span>
+            </div>
+          </div>
+
+          <button class="btn btn-block" id="copyEmailBtn" type="button">
+            Copy contact email
+          </button>
+
+          <p class="tiny muted">No backend required.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <h2>Products</h2>
+        <p class="muted">Core offerings you can present to clients and partners.</p>
+
+        <div class="grid">
+          <article class="tile">
+            <h3>AI Trading Platform</h3>
+            <p>
+              Real-time market analysis, predictive signals, automation hooks, and performance tracking.
+            </p>
+          </article>
+
+          <article class="tile">
+            <h3>Quant Analytics Suite</h3>
+            <p>
+              Backtesting, strategy optimization, and statistical tools for data-driven decisions.
+            </p>
+          </article>
+
+          <article class="tile">
+            <h3>Custom ML Solutions</h3>
+            <p>
+              Model design, training pipelines, deployment automation, and monitoring.
+            </p>
+          </article>
+
+          <article class="tile">
+            <h3>Market Monitoring Tools</h3>
+            <p>
+              Alerts, rule engines, and low-latency integrations with exchange APIs.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech" class="section section-alt">
+      <div class="container">
+        <h2>Technology</h2>
+        <div class="two-col">
+          <div class="tile">
+            <h3>Engineering</h3>
+            <ul>
+              <li>Python, FastAPI, async pipelines</li>
+              <li>Type-safe APIs & clean architecture</li>
+              <li>Observability: logs/metrics/tracing</li>
+            </ul>
+          </div>
+          <div class="tile">
+            <h3>ML / Data</h3>
+            <ul>
+              <li>Model training and evaluation workflows</li>
+              <li>Feature engineering & time-series data</li>
+              <li>Deployment with continuous monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p class="muted">
+          Codevanta delivers software products and automation systems with a focus on measurable performance,
+          stability, and iteration speed — from MVP to production scale.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">Use the email below to receive inquiries.</p>
+
+        <div class="contact">
+          <div class="tile">
+            <h3>Email</h3>
+            <p class="mono" id="contactEmail">codevanta11@gmail.com</p>
+            <p class="tiny muted">You can later switch to a domain email (e.g., contact@codevanta.com).</p>
+            <div class="cta">
+              <a class="btn" id="mailtoLink" href="mailto:codevanta11@gmail.com?subject=Project%20Inquiry">
+                Send email
+              </a>
+              <button class="btn btn-ghost" id="copyBtn" type="button">Copy</button>
+            </div>
+          </div>
+
+          <div class="tile">
+            <h3>Links</h3>
+            <div class="links">
+              <a href="#" aria-label="GitHub">GitHub</a>
+              <a href="#" aria-label="LinkedIn">LinkedIn</a>
+              <a href="#" aria-label="X">X</a>
+            </div>
+            <p class="tiny muted">Add your social profiles or product docs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>© <span id="year"></span> <span id="brandName2">Codevanta</span></span>
+        <span class="muted">Built for GitHub Pages</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

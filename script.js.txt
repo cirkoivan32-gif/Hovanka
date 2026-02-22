@@ -1,0 +1,22 @@
+const yearEl = document.getElementById("year");
+yearEl.textContent = String(new Date().getFullYear());
+
+const emailEl = document.getElementById("contactEmail");
+const copyBtn = document.getElementById("copyBtn");
+const copyEmailBtn = document.getElementById("copyEmailBtn");
+
+function copyText(text){
+  navigator.clipboard.writeText(text).then(() => {
+    const old = copyBtn.textContent;
+    copyBtn.textContent = "Copied";
+    setTimeout(() => (copyBtn.textContent = old), 900);
+  });
+}
+
+copyBtn.addEventListener("click", () => copyText(emailEl.textContent.trim()));
+copyEmailBtn.addEventListener("click", () => copyText(emailEl.textContent.trim()));
+
+// Brand name in one place:
+const BRAND = "Codevanta";
+document.getElementById("brandName").textContent = BRAND;
+document.getElementById("brandName2").textContent = BRAND;
