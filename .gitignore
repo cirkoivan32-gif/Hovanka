@@ -1,0 +1,13 @@
+.env
+.env.local
+.tools/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+db.sqlite3
+LOCAL_ACCESS.txt
+RENDER_ENV_TO_SET.txt
+runserver.out.log
+runserver.err.log
+staticfiles/

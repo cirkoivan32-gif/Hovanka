@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: crypto-ai-site
+    env: python
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: gunicorn config.wsgi:application
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SITE_URL
+        value: https://crypto-ai-site.onrender.com

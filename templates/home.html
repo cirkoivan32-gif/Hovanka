@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.meta_title }}</title>
+    <meta name="description" content="{{ page.meta_description }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page.meta_title }}">
+    <meta property="og:description" content="{{ page.meta_description }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:site_name" content="{{ page.site_name }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.meta_title }}">
+    <meta name="twitter:description" content="{{ page.meta_description }}">
+    {% if google_site_verification %}
+        <meta name="google-site-verification" content="{{ google_site_verification }}">
+    {% endif %}
+    {% if not allow_indexing %}
+        <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div class="hero-glow hero-glow-left"></div>
+            <div class="hero-glow hero-glow-right"></div>
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">{{ page.badge_text }}</p>
+                    <h1>{{ page.hero_title }}</h1>
+                    <p class="lead">{{ page.hero_lead }}</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="{{ page.primary_button_url }}" target="_blank" rel="noopener">{{ page.primary_button_text }}</a>
+                        <a class="btn btn-secondary" href="#features">{{ page.secondary_button_text }}</a>
+                    </div>
+                    <ul class="hero-highlights" aria-label="Crypto AI highlights">
+                        {% for point in proof_points %}
+                            <li>{{ point.text }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <aside class="hero-card">
+                    <p class="mini-label">{{ page.hero_card_label }}</p>
+                    <div class="price-row">
+                        <span class="price">{{ page.price_text }}</span>
+                        <span class="price-note">{{ page.price_note }}</span>
+                    </div>
+                    <p class="card-copy">{{ page.hero_card_copy }}</p>
+                    <ul class="check-list">
+                        {% for stat in stats %}
+                            <li>{{ stat.value }}</li>
+                        {% endfor %}
+                    </ul>
+                    <a class="btn btn-primary btn-block" href="{{ page.primary_button_url }}" target="_blank" rel="noopener">{{ page.primary_button_text }}</a>
+                    <p class="disclaimer">{{ page.disclaimer }}</p>
+                </aside>
+            </div>
+        </header>
+
+        <main>
+            <section class="section stats-section">
+                <div class="container stats-grid">
+                    {% for stat in stats %}
+                        <article class="stat-card">
+                            <p class="stat-value">{{ stat.value }}</p>
+                            <p class="stat-label">{{ stat.label }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section id="features" class="section">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">{{ page.features_eyebrow }}</p>
+                        <h2>{{ page.features_heading }}</h2>
+                        <p>{{ page.features_intro }}</p>
+                    </div>
+                    <div class="feature-grid">
+                        {% for feature in features %}
+                            <article class="feature-card">
+                                <span class="feature-index">0{{ forloop.counter }}</span>
+                                <h3>{{ feature.title }}</h3>
+                                <p>{{ feature.description }}</p>
+                            </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-contrast">
+                <div class="container value-grid">
+                    <div>
+                        <p class="eyebrow">{{ page.why_eyebrow }}</p>
+                        <h2>{{ page.why_heading }}</h2>
+                        <p class="value-copy">{{ page.why_copy }}</p>
+                    </div>
+                    <div class="value-cards">
+                        {% for reason in reasons %}
+                            <article class="value-card">
+                                <h3>{{ reason.title }}</h3>
+                                <p>{{ reason.description }}</p>
+                            </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">{{ page.workflow_eyebrow }}</p>
+                        <h2>{{ page.workflow_heading }}</h2>
+                        <p>{{ page.workflow_intro }}</p>
+                    </div>
+                    <div class="steps-grid">
+                        {% for step in steps %}
+                            <article class="step-card">
+                                <p class="step-number">{{ step.number }}</p>
+                                <h3>{{ step.title }}</h3>
+                                <p>{{ step.description }}</p>
+                            </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <section id="buy" class="section">
+                <div class="container">
+                    <div class="cta-panel">
+                        <div>
+                            <p class="eyebrow">{{ page.cta_eyebrow }}</p>
+                            <h2>{{ page.cta_heading }}</h2>
+                            <p>{{ page.cta_copy }}</p>
+                        </div>
+                        <div class="cta-actions">
+                            <p class="price compact">{{ page.price_text }}</p>
+                            <a class="btn btn-primary" href="{{ page.primary_button_url }}" target="_blank" rel="noopener">{{ page.cta_button_text }}</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer-content">
+                <p>{{ page.footer_text }}</p>
+                <a href="{{ page.primary_button_url }}" target="_blank" rel="noopener">Open checkout</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
