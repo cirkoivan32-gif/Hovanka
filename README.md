@@ -42,7 +42,7 @@ Manual dashboard setup:
 
 - Runtime: `Python 3`
 - Build command: `bash build.sh`
-- Start command: `gunicorn config.wsgi:application`
+- Start command: `gunicorn config.wsgi:application --bind 0.0.0.0:$PORT`
 - Plan: `Free`
 - Env vars:
   - `DJANGO_SECRET_KEY`
@@ -55,6 +55,8 @@ Manual dashboard setup:
 Or deploy with the included `render.yaml` blueprint.
 
 Important for a public Google-indexed site: Render's Free web services spin down after 15 minutes of inactivity, and while they are spun down Render automatically responds to `/robots.txt` with a disallow-all response. Free web services are fine for testing, but they are not a strong production SEO choice.
+
+Render web services must bind to `0.0.0.0`, which is why the included start command explicitly uses `--bind 0.0.0.0:$PORT`.
 
 ## Google indexing
 
