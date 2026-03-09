@@ -27,7 +27,7 @@ Copy `.env.example` into your preferred local env workflow, or set variables man
 - `DJANGO_DEBUG`: `True` locally, `False` on Render
 - `DJANGO_ALLOWED_HOSTS`: optional comma-separated extra hosts
 - `DJANGO_CSRF_TRUSTED_ORIGINS`: optional comma-separated origins with scheme
-- `DJANGO_SITE_URL`: canonical public URL such as `https://crypto-ai-site.onrender.com`
+- `DJANGO_SITE_URL`: canonical public URL such as `https://codevanta.onrender.com`
 - `GOOGLE_SITE_VERIFICATION`: optional Search Console verification token
 - `DJANGO_SUPERUSER_USERNAME`: optional env-based admin username
 - `DJANGO_SUPERUSER_EMAIL`: optional env-based admin email
@@ -47,7 +47,7 @@ Manual dashboard setup:
 - Env vars:
   - `DJANGO_SECRET_KEY`
   - `DJANGO_DEBUG=False`
-  - `DJANGO_SITE_URL=https://your-service.onrender.com`
+  - `DJANGO_SITE_URL=https://codevanta.onrender.com`
   - optional `DJANGO_SUPERUSER_USERNAME`
   - optional `DJANGO_SUPERUSER_EMAIL`
   - optional `DJANGO_SUPERUSER_PASSWORD`
