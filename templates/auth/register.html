@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Create Account | {{ page.site_name }}{% endblock %}
+
+{% block main %}
+    <main class="app-main">
+        <section class="app-hero">
+            <div class="container app-hero-inner">
+                <div>
+                    <p class="pill">Real registration</p>
+                    <h1>Create your Codevanta account</h1>
+                    <p class="hero-lead">Your account is stored on the server, can be managed by staff, and gives you a real dashboard instead of a browser-only sandbox.</p>
+                </div>
+                <div class="app-hero-actions">
+                    <a class="btn btn-secondary" href="{% url 'home' %}">Back to site</a>
+                    <a class="btn btn-ghost" href="{% url 'login' %}">Already have an account?</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section app-section">
+            <div class="container auth-shell">
+                <article class="panel-card reveal auth-panel">
+                    <div class="panel-head">
+                        <div>
+                            <p class="mini-eyebrow">Create account</p>
+                            <h2>Start with a real user profile</h2>
+                        </div>
+                    </div>
+                    <form class="auth-form" method="post">
+                        {% csrf_token %}
+                        <label>
+                            <span>Full name</span>
+                            {{ register_form.full_name }}
+                            {% for error in register_form.full_name.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            {{ register_form.email }}
+                            {% for error in register_form.email.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                        </label>
+                        <label>
+                            <span>Company or brand</span>
+                            {{ register_form.company_name }}
+                            {% for error in register_form.company_name.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                        </label>
+                        <label>
+                            <span>Focus</span>
+                            {{ register_form.focus }}
+                            {% for error in register_form.focus.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                        </label>
+                        <label class="checkbox-row">
+                            {{ register_form.wants_pro_updates }}
+                            <span>Keep me on the Pro v2.0 update list</span>
+                        </label>
+                        <label>
+                            <span>Password</span>
+                            {{ register_form.password1 }}
+                            {% for error in register_form.password1.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                        </label>
+                        <label>
+                            <span>Repeat password</span>
+                            {{ register_form.password2 }}
+                            {% for error in register_form.password2.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                        </label>
+                        {% for error in register_form.non_field_errors %}<p class="field-error">{{ error }}</p>{% endfor %}
+                        <button class="btn btn-primary" type="submit">Create account</button>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
+{% endblock %}

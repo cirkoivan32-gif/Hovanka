@@ -1,161 +1,266 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.meta_title }}</title>
-    <meta name="description" content="{{ page.meta_description }}">
-    <link rel="canonical" href="{{ canonical_url }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ page.meta_title }}">
-    <meta property="og:description" content="{{ page.meta_description }}">
-    <meta property="og:url" content="{{ canonical_url }}">
-    <meta property="og:site_name" content="{{ page.site_name }}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ page.meta_title }}">
-    <meta name="twitter:description" content="{{ page.meta_description }}">
-    {% if google_site_verification %}
-        <meta name="google-site-verification" content="{{ google_site_verification }}">
-    {% endif %}
-    {% if not allow_indexing %}
-        <meta name="robots" content="noindex, nofollow">
-    {% endif %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <div class="page-shell">
-        <header class="hero">
-            <div class="hero-glow hero-glow-left"></div>
-            <div class="hero-glow hero-glow-right"></div>
-            <div class="container hero-grid">
+{% extends "base.html" %}
+
+{% block main %}
+    <main>
+        <section class="hero-block">
+            <div class="container hero-layout">
                 <div class="hero-copy">
-                    <p class="eyebrow">{{ page.badge_text }}</p>
+                    <p class="pill">{{ page.badge_text }}</p>
                     <h1>{{ page.hero_title }}</h1>
-                    <p class="lead">{{ page.hero_lead }}</p>
+                    <p class="hero-lead">{{ page.hero_lead }}</p>
+
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="{{ page.primary_button_url }}" target="_blank" rel="noopener">{{ page.primary_button_text }}</a>
-                        <a class="btn btn-secondary" href="#features">{{ page.secondary_button_text }}</a>
+                        <a class="btn btn-primary" href="{% url 'base-checkout' %}">{{ page.primary_button_text }}</a>
+                        {% if user.is_authenticated %}
+                            <a class="btn btn-secondary" href="{% url 'dashboard' %}">Open dashboard</a>
+                        {% else %}
+                            <a class="btn btn-secondary" href="{% url 'register' %}">{{ page.secondary_button_text }}</a>
+                        {% endif %}
                     </div>
-                    <ul class="hero-highlights" aria-label="Crypto AI highlights">
-                        {% for point in proof_points %}
-                            <li>{{ point.text }}</li>
+
+                    <div class="hero-points">
+                        <ul>
+                            {% for point in proof_points %}
+                                <li>{{ point.text }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="metric-grid">
+                        {% for stat in stats %}
+                            <article class="metric-card reveal">
+                                <p class="metric-value">{{ stat.value }}</p>
+                                <p class="metric-label">{{ stat.label }}</p>
+                            </article>
                         {% endfor %}
-                    </ul>
+                    </div>
                 </div>
 
-                <aside class="hero-card">
-                    <p class="mini-label">{{ page.hero_card_label }}</p>
-                    <div class="price-row">
-                        <span class="price">{{ page.price_text }}</span>
-                        <span class="price-note">{{ page.price_note }}</span>
+                <aside class="hero-console reveal">
+                    <div class="console-head">
+                        <p class="mini-eyebrow">{{ page.hero_card_label }}</p>
+                        <span class="live-dot"></span>
                     </div>
-                    <p class="card-copy">{{ page.hero_card_copy }}</p>
-                    <ul class="check-list">
-                        {% for stat in stats %}
-                            <li>{{ stat.value }}</li>
-                        {% endfor %}
-                    </ul>
-                    <a class="btn btn-primary btn-block" href="{{ page.primary_button_url }}" target="_blank" rel="noopener">{{ page.primary_button_text }}</a>
-                    <p class="disclaimer">{{ page.disclaimer }}</p>
+                    <div class="console-screen">
+                        <div class="console-title-row">
+                            <div>
+                                <p class="console-overline">Current offer</p>
+                                <h2>{{ page.hero_card_copy }}</h2>
+                            </div>
+                            <span class="console-pill">{{ page.price_note }}</span>
+                        </div>
+
+                        <div class="console-grid">
+                            <article class="console-card">
+                                <p class="console-label">Price</p>
+                                <strong>{{ page.price_text }}</strong>
+                            </article>
+                            <article class="console-card">
+                                <p class="console-label">Accounts</p>
+                                <strong>Server-backed</strong>
+                            </article>
+                            <article class="console-card">
+                                <p class="console-label">Checkout</p>
+                                <strong>Tracked</strong>
+                            </article>
+                            <article class="console-card">
+                                <p class="console-label">Roadmap</p>
+                                <strong>Pro v2.0</strong>
+                                <small>In development</small>
+                            </article>
+                        </div>
+
+                        <div class="console-checklist">
+                            <p class="console-label">What you can do now</p>
+                            <ul>
+                                <li><span></span>Create a real user account</li>
+                                <li><span></span>Buy the current base version for $3</li>
+                                <li><span></span>Track access and Pro interest from your dashboard</li>
+                            </ul>
+                        </div>
+
+                        <a class="btn btn-primary btn-block" href="{% url 'base-checkout' %}">{{ page.cta_button_text }}</a>
+                        <p class="panel-copy">{{ page.disclaimer }}</p>
+                    </div>
                 </aside>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <section class="section stats-section">
-                <div class="container stats-grid">
-                    {% for stat in stats %}
-                        <article class="stat-card">
-                            <p class="stat-value">{{ stat.value }}</p>
-                            <p class="stat-label">{{ stat.label }}</p>
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">{{ page.features_eyebrow }}</p>
+                    <h2>{{ page.features_heading }}</h2>
+                    <p>{{ page.features_intro }}</p>
+                </div>
+                <div class="advantage-grid">
+                    {% for feature in features %}
+                        <article class="advantage-card reveal">
+                            <h3>{{ feature.title }}</h3>
+                            <p>{{ feature.description }}</p>
                         </article>
                     {% endfor %}
                 </div>
-            </section>
-
-            <section id="features" class="section">
-                <div class="container">
-                    <div class="section-heading">
-                        <p class="eyebrow">{{ page.features_eyebrow }}</p>
-                        <h2>{{ page.features_heading }}</h2>
-                        <p>{{ page.features_intro }}</p>
-                    </div>
-                    <div class="feature-grid">
-                        {% for feature in features %}
-                            <article class="feature-card">
-                                <span class="feature-index">0{{ forloop.counter }}</span>
-                                <h3>{{ feature.title }}</h3>
-                                <p>{{ feature.description }}</p>
-                            </article>
-                        {% endfor %}
-                    </div>
-                </div>
-            </section>
-
-            <section class="section section-contrast">
-                <div class="container value-grid">
-                    <div>
-                        <p class="eyebrow">{{ page.why_eyebrow }}</p>
-                        <h2>{{ page.why_heading }}</h2>
-                        <p class="value-copy">{{ page.why_copy }}</p>
-                    </div>
-                    <div class="value-cards">
-                        {% for reason in reasons %}
-                            <article class="value-card">
-                                <h3>{{ reason.title }}</h3>
-                                <p>{{ reason.description }}</p>
-                            </article>
-                        {% endfor %}
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="container">
-                    <div class="section-heading">
-                        <p class="eyebrow">{{ page.workflow_eyebrow }}</p>
-                        <h2>{{ page.workflow_heading }}</h2>
-                        <p>{{ page.workflow_intro }}</p>
-                    </div>
-                    <div class="steps-grid">
-                        {% for step in steps %}
-                            <article class="step-card">
-                                <p class="step-number">{{ step.number }}</p>
-                                <h3>{{ step.title }}</h3>
-                                <p>{{ step.description }}</p>
-                            </article>
-                        {% endfor %}
-                    </div>
-                </div>
-            </section>
-
-            <section id="buy" class="section">
-                <div class="container">
-                    <div class="cta-panel">
-                        <div>
-                            <p class="eyebrow">{{ page.cta_eyebrow }}</p>
-                            <h2>{{ page.cta_heading }}</h2>
-                            <p>{{ page.cta_copy }}</p>
-                        </div>
-                        <div class="cta-actions">
-                            <p class="price compact">{{ page.price_text }}</p>
-                            <a class="btn btn-primary" href="{{ page.primary_button_url }}" target="_blank" rel="noopener">{{ page.cta_button_text }}</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="container footer-content">
-                <p>{{ page.footer_text }}</p>
-                <a href="{{ page.primary_button_url }}" target="_blank" rel="noopener">Open checkout</a>
             </div>
-        </footer>
-    </div>
-</body>
-</html>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">{{ page.why_eyebrow }}</p>
+                    <h2>{{ page.why_heading }}</h2>
+                    <p>{{ page.why_copy }}</p>
+                </div>
+                <div class="advantage-grid">
+                    {% for reason in reasons %}
+                        <article class="advantage-card reveal">
+                            <h3>{{ reason.title }}</h3>
+                            <p>{{ reason.description }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="workflow" class="section">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">{{ page.workflow_eyebrow }}</p>
+                    <h2>{{ page.workflow_heading }}</h2>
+                    <p>{{ page.workflow_intro }}</p>
+                </div>
+                <div class="workflow-grid">
+                    {% for step in steps %}
+                        <article class="workflow-card reveal">
+                            <p class="workflow-step">{{ step.number }}</p>
+                            <h3>{{ step.title }}</h3>
+                            <p>{{ step.description }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">{{ page.accounts_eyebrow }}</p>
+                    <h2>{{ page.accounts_heading }}</h2>
+                    <p>{{ page.accounts_copy }}</p>
+                </div>
+                <div class="app-layout account-layout">
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">For users</p>
+                                <h2>What registration gives you</h2>
+                            </div>
+                        </div>
+                        <ul class="activity-list">
+                            <li>Real login with hashed passwords</li>
+                            <li>Personal dashboard with focus and access status</li>
+                            <li>Pro v2.0 update preference saved on the server</li>
+                            <li>Separate product purchase link tracked by the site</li>
+                        </ul>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">For the company</p>
+                                <h2>What staff can monitor</h2>
+                            </div>
+                        </div>
+                        <ul class="activity-list">
+                            <li>Total visits and unique visitors</li>
+                            <li>Registered accounts and recent signups</li>
+                            <li>Checkout click intent for the base version</li>
+                            <li>Recent activity in the control panel and admin</li>
+                        </ul>
+                        {% if user.is_staff %}
+                            <a class="btn btn-secondary" href="{% url 'control' %}">Open control panel</a>
+                        {% endif %}
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">{{ page.pricing_eyebrow }}</p>
+                    <h2>{{ page.pricing_heading }}</h2>
+                    <p>{{ page.pricing_intro }}</p>
+                </div>
+                <div class="plan-grid">
+                    {% for plan in plans %}
+                        <article class="plan-card reveal{% if plan.featured %} is-featured{% endif %}">
+                            {% if plan.badge %}
+                                <p class="plan-badge">{{ plan.badge }}</p>
+                            {% endif %}
+                            <h3>{{ plan.name }}</h3>
+                            <div class="plan-price">
+                                <span>{{ plan.price }}</span>
+                                <small>{{ plan.billing }}</small>
+                            </div>
+                            {% if plan.description %}
+                                <p class="plan-description">{{ plan.description }}</p>
+                            {% endif %}
+                            <ul class="plan-list">
+                                {% for item in plan.feature_items %}
+                                    <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% if plan.disabled %}
+                                <span class="btn btn-disabled" aria-disabled="true">{{ plan.cta_text }}</span>
+                            {% elif plan.url %}
+                                <a class="btn {% if plan.featured %}btn-primary{% else %}btn-secondary{% endif %}" href="{% url 'base-checkout' %}">{{ plan.cta_text }}</a>
+                            {% else %}
+                                <a class="btn btn-secondary" href="{% url 'register' %}">{{ plan.cta_text }}</a>
+                            {% endif %}
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section section-alt">
+            <div class="container faq-layout">
+                <div class="section-copy">
+                    <p class="pill">{{ page.faq_eyebrow }}</p>
+                    <h2>{{ page.faq_heading }}</h2>
+                    <p>{{ page.faq_intro }}</p>
+                </div>
+                <div class="faq-list" data-faq-list>
+                    {% for item in faq_items %}
+                        <article class="faq-item{% if forloop.first %} is-open{% endif %} reveal">
+                            <button class="faq-trigger" type="button" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                                <span>{{ item.question }}</span>
+                                <span class="faq-plus"></span>
+                            </button>
+                            <div class="faq-answer"><p>{{ item.answer }}</p></div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container cta-shell reveal">
+                <div>
+                    <p class="pill">{{ page.cta_eyebrow }}</p>
+                    <h2>{{ page.cta_heading }}</h2>
+                    <p>{{ page.cta_copy }}</p>
+                </div>
+                <div class="cta-actions">
+                    <a class="btn btn-primary" href="{% url 'base-checkout' %}">{{ page.cta_button_text }}</a>
+                    {% if user.is_authenticated %}
+                        <a class="btn btn-ghost" href="{% url 'dashboard' %}">Open dashboard</a>
+                    {% else %}
+                        <a class="btn btn-ghost" href="{% url 'register' %}">Create account</a>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

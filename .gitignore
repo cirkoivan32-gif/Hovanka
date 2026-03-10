@@ -12,3 +12,4 @@ runserver.out.log
 runserver.err.log
 staticfiles/
 dist/
+.verify*/

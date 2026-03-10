@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page.meta_title }}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ page.meta_description }}{% endblock %}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}{{ page.meta_title }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ page.meta_description }}{% endblock %}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:site_name" content="{{ page.site_name }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ page.meta_title }}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ page.meta_description }}{% endblock %}">
+    {% if google_site_verification %}
+        <meta name="google-site-verification" content="{{ google_site_verification }}">
+    {% endif %}
+    {% if not allow_indexing %}
+        <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/site.js' %}" defer></script>
+</head>
+<body>
+    <div class="site-bg">
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+    </div>
+
+    <header class="topbar{% block topbar_class %}{% endblock %}">
+        <div class="container topbar-inner">
+            <a class="brandmark" href="{% url 'home' %}">
+                <span class="brandmark-icon"></span>
+                <span>{{ page.site_name }}</span>
+            </a>
+            <nav class="topnav" aria-label="Primary navigation">
+                <a href="{% url 'home' %}#features">Features</a>
+                <a href="{% url 'home' %}#workflow">Workflow</a>
+                <a href="{% url 'home' %}#pricing">Pricing</a>
+                <a href="{% url 'home' %}#faq">FAQ</a>
+            </nav>
+            <div class="topbar-actions">
+                {% if user.is_staff %}
+                    <a class="btn btn-ghost" href="{% url 'control' %}">Control</a>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <a class="btn btn-ghost" href="{% url 'dashboard' %}">Dashboard</a>
+                    <a class="btn btn-primary" href="{% url 'base-checkout' %}">Buy Base</a>
+                {% else %}
+                    <a class="btn btn-ghost" href="{% url 'login' %}">Sign in</a>
+                    <a class="btn btn-primary" href="{% url 'register' %}">Create account</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    {% if messages %}
+        <section class="flash-wrap">
+            <div class="container flash-stack">
+                {% for message in messages %}
+                    <article class="flash flash-{{ message.tags|default:'info' }}">{{ message }}</article>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% block main %}{% endblock %}
+
+    {% block footer %}
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <a class="brandmark" href="{% url 'home' %}">
+                    <span class="brandmark-icon"></span>
+                    <span>{{ page.site_name }}</span>
+                </a>
+                <p>{{ page.footer_text }}</p>
+            </div>
+        </footer>
+    {% endblock %}
+</body>
+</html>

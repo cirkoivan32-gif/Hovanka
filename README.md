@@ -1,61 +1,82 @@
-# Codevanta Static Product Site
+# Codevanta Django Site
 
-`codevanta.onrender.com` is deployed as a Render Static Site. That keeps the public site awake on the free tier because static hosting does not use a sleeping web service.
+`codevanta.onrender.com` is now intended to run as a Django web service, not as a static demo. The site includes:
 
-## Production structure
+- real account registration and login with Django auth
+- a user dashboard at `/app/`
+- a staff control panel at `/control/`
+- Django admin at `/admin/`
+- visit tracking, signup tracking, and base checkout click tracking
 
-Production is built from:
+## Main routes
 
-- [content/site.json](content/site.json) for product copy, pricing, FAQ, bot modes, and app demo data
-- [site_static/index.template.html](site_static/index.template.html) for the public marketing page
-- [site_static/app.template.html](site_static/app.template.html) for the `/app/` workspace page
-- [site_static/site.js](site_static/site.js) for tabs, FAQ, local registration, local login, and app hydration
-- [static/css/style.css](static/css/style.css) for the visual system
-- [scripts/build_static.py](scripts/build_static.py) to generate `dist/`
+- `/` public landing page
+- `/accounts/register/` real account registration
+- `/accounts/login/` sign in
+- `/app/` user dashboard
+- `/control/` staff analytics dashboard
+- `/admin/` admin area
+- `/checkout/base/` tracked redirect to the Payhip base product
 
-Build locally:
+## Local run
 
 ```bash
-python scripts/build_static.py
+python manage.py migrate
+python manage.py runserver
 ```
-
-Generated output:
-
-- `dist/index.html`
-- `dist/app/index.html`
-- `dist/assets/style.css`
-- `dist/assets/site.js`
-- `dist/robots.txt`
-- `dist/sitemap.xml`
-
-## Registration model
-
-The public site now includes registration and login, but it is currently a static-browser demo:
-
-- accounts are stored in `localStorage`
-- passwords are hashed in the browser before saving
-- the `/app/` workspace is a local sandbox dashboard, not server-backed auth
-
-If you want real multi-device user accounts later, the next step is adding a backend auth provider and database.
 
 ## Render deploy
 
-[render.yaml](render.yaml) is configured for a Render Static Site:
+`render.yaml` is configured for:
 
-- Runtime: `static`
-- Build command: `python scripts/build_static.py`
-- Publish directory: `dist`
+- a Python web service named `codevanta`
+- a PostgreSQL database named `codevanta-db`
+- `bash build.sh`
+- `gunicorn config.wsgi:application --bind 0.0.0.0:$PORT`
 
-## Content edits
+The build script:
 
-To change live content:
+```bash
+pip install -r requirements.txt
+python manage.py collectstatic --no-input
+python manage.py migrate
+python manage.py ensure_admin
+```
 
-1. Edit [content/site.json](content/site.json)
-2. Push to GitHub
-3. Render rebuilds the static site automatically
+## Required environment variables
 
-To verify Google Search Console later, set `google_site_verification` in [content/site.json](content/site.json), or pass `GOOGLE_SITE_VERIFICATION` during build.
+- `DJANGO_SECRET_KEY`
+- `DJANGO_DEBUG=False`
+- `DATABASE_URL`
+- `DJANGO_SUPERUSER_USERNAME`
+- `DJANGO_SUPERUSER_EMAIL`
+- `DJANGO_SUPERUSER_PASSWORD`
 
-## Django status
+`RENDER_EXTERNAL_HOSTNAME` is provided by Render and is already used to populate `ALLOWED_HOSTS` automatically.
 
-The Django project is still present in the repo, but it is not the live production path anymore. The public site is generated from the static builder instead of Django templates or Django admin.
+## Statistics and management
+
+Where to manage the site:
+
+- content, users, purchase status, and logs: `/admin/`
+- summarized site statistics: `/control/`
+
+What is tracked:
+
+- page visits
+- unique visitors by visitor cookie
+- recent signups
+- checkout clicks for the base product
+- Pro v2.0 waitlist interest
+
+## Product positioning
+
+The landing page reflects the actual product state:
+
+- Base Version is the real public release for `$3`
+- Pro v2.0 is still in development
+- registration creates a site account, but purchase still happens separately through Payhip
+
+## Legacy files
+
+The older static-site builder files are still in the repository for reference, but the intended production path is now the Django app.

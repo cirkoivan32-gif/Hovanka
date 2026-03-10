@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Sign In | {{ page.site_name }}{% endblock %}
+
+{% block main %}
+    <main class="app-main">
+        <section class="app-hero">
+            <div class="container app-hero-inner">
+                <div>
+                    <p class="pill">Account access</p>
+                    <h1>Sign in to your Codevanta dashboard</h1>
+                    <p class="hero-lead">Use your real account to manage your focus, purchase status, and Pro v2.0 update preference from one place.</p>
+                </div>
+                <div class="app-hero-actions">
+                    <a class="btn btn-secondary" href="{% url 'home' %}">Back to site</a>
+                    <a class="btn btn-ghost" href="{% url 'register' %}">Create account</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section app-section">
+            <div class="container auth-shell">
+                <article class="panel-card reveal auth-panel">
+                    <div class="panel-head">
+                        <div>
+                            <p class="mini-eyebrow">Sign in</p>
+                            <h2>Open your real dashboard</h2>
+                        </div>
+                    </div>
+                    <form class="auth-form" method="post">
+                        {% csrf_token %}
+                        <label>
+                            <span>Email</span>
+                            {{ login_form.email }}
+                            {% for error in login_form.email.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                        </label>
+                        <label>
+                            <span>Password</span>
+                            {{ login_form.password }}
+                            {% for error in login_form.password.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                        </label>
+                        {% for error in login_form.non_field_errors %}<p class="field-error">{{ error }}</p>{% endfor %}
+                        <button class="btn btn-primary" type="submit">Sign in</button>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
+{% endblock %}

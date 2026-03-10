@@ -1226,6 +1226,89 @@ p {
     transform: translateY(0);
 }
 
+.btn-block {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.flash-wrap {
+    padding-top: 1rem;
+}
+
+.flash-stack {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.flash {
+    padding: 0.95rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--bg-panel);
+    box-shadow: var(--shadow);
+}
+
+.flash-success {
+    border-color: rgba(98, 244, 180, 0.28);
+}
+
+.flash-error {
+    border-color: rgba(255, 109, 141, 0.28);
+}
+
+.flash-warning {
+    border-color: rgba(255, 209, 102, 0.28);
+}
+
+.auth-shell {
+    display: grid;
+    justify-items: center;
+}
+
+.auth-panel {
+    width: min(100%, 640px);
+}
+
+.field-error {
+    color: #ffc6d3;
+    font-size: 0.85rem;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: auto;
+    min-height: auto;
+}
+
+.stack-actions,
+.control-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.stack-actions .btn,
+.inline-form .btn {
+    width: 100%;
+}
+
+.inline-form {
+    margin: 0;
+}
+
+.control-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 1.2rem;
+}
+
+.account-layout {
+    margin-top: 2rem;
+}
+
 @media (max-width: 1080px) {
     .advantage-grid,
     .workflow-grid,
@@ -1240,7 +1323,8 @@ p {
     .connector-layout,
     .app-layout,
     .hero-layout,
-    .bot-showcase {
+    .bot-showcase,
+    .control-grid {
         grid-template-columns: 1fr;
     }
 

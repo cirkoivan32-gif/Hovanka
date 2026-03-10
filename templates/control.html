@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}Control Panel | {{ page.site_name }}{% endblock %}
+
+{% block main %}
+    <main class="app-main">
+        <section class="app-hero">
+            <div class="container app-hero-inner">
+                <div>
+                    <p class="pill">Staff analytics</p>
+                    <h1>Control panel</h1>
+                    <p class="hero-lead">Use this page to see what is happening on the real site: visitors, signups, checkout intent, and recent activity across accounts.</p>
+                </div>
+                <div class="app-hero-actions">
+                    <a class="btn btn-secondary" href="{% url 'dashboard' %}">Back to dashboard</a>
+                    <a class="btn btn-ghost" href="{% url 'admin:index' %}">Open admin</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section app-section">
+            <div class="container">
+                <div class="app-stat-grid">
+                    {% for item in metrics %}
+                        <article class="app-stat reveal">
+                            <p class="metric-value">{{ item.value }}</p>
+                            <p class="metric-label">{{ item.label }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+
+                <div class="control-grid">
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Pages</p>
+                                <h2>Top visited paths</h2>
+                            </div>
+                        </div>
+                        <div class="table-scroll">
+                            <table class="comparison-table app-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Path</th>
+                                        <th scope="col">Visits</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for row in top_pages %}
+                                        <tr>
+                                            <td>{{ row.path }}</td>
+                                            <td>{{ row.total }}</td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr>
+                                            <td colspan="2">No page data yet.</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Acquisition</p>
+                                <h2>Top UTM sources</h2>
+                            </div>
+                        </div>
+                        <div class="table-scroll">
+                            <table class="comparison-table app-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Source</th>
+                                        <th scope="col">Visits</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for row in top_sources %}
+                                        <tr>
+                                            <td>{{ row.utm_source }}</td>
+                                            <td>{{ row.total }}</td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr>
+                                            <td colspan="2">No UTM source data yet.</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Referrers</p>
+                                <h2>Top external hosts</h2>
+                            </div>
+                        </div>
+                        <ul class="activity-list">
+                            {% for host, count in top_referrers %}
+                                <li>{{ host }} - {{ count }}</li>
+                            {% empty %}
+                                <li>No referrer data yet.</li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Signups</p>
+                                <h2>Recent registered accounts</h2>
+                            </div>
+                        </div>
+                        <ul class="activity-list">
+                            {% for profile in recent_signups %}
+                                <li>{{ profile.user.email }} - {{ profile.created_at|date:"d M Y H:i" }}</li>
+                            {% empty %}
+                                <li>No signups yet.</li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Events</p>
+                                <h2>Recent conversions</h2>
+                            </div>
+                        </div>
+                        <ul class="activity-list">
+                            {% for event in recent_events %}
+                                <li>{{ event.get_event_type_display }}{% if event.user %} - {{ event.user.email }}{% endif %} - {{ event.created_at|date:"d M Y H:i" }}</li>
+                            {% empty %}
+                                <li>No conversion events yet.</li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Visits</p>
+                                <h2>Recent visit log</h2>
+                            </div>
+                        </div>
+                        <ul class="activity-list">
+                            {% for visit in recent_visits %}
+                                <li>{{ visit.path }}{% if visit.user %} - {{ visit.user.email }}{% endif %} - {{ visit.created_at|date:"d M Y H:i" }}</li>
+                            {% empty %}
+                                <li>No visits yet.</li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

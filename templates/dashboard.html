@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | {{ page.site_name }}{% endblock %}
+
+{% block main %}
+    <main class="app-main">
+        <section class="app-hero">
+            <div class="container app-hero-inner">
+                <div>
+                    <p class="pill">Account dashboard</p>
+                    <h1>{{ request.user.first_name|default:request.user.email }}</h1>
+                    <p class="hero-lead">Manage your profile, keep track of the base version status, and decide whether you want Pro v2.0 updates from your real account.</p>
+                </div>
+                <div class="app-hero-actions">
+                    <a class="btn btn-secondary" href="{% url 'base-checkout' %}">Buy Base</a>
+                    <a class="btn btn-ghost" href="{% url 'logout' %}">Log out</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section app-section">
+            <div class="container app-layout">
+                <div class="app-main-column">
+                    <div class="app-stat-grid">
+                        {% for item in account_metrics %}
+                            <article class="app-stat reveal">
+                                <p class="metric-value">{{ item.value }}</p>
+                                <p class="metric-label">{{ item.label }}</p>
+                            </article>
+                        {% endfor %}
+                    </div>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Profile</p>
+                                <h2>Update your account details</h2>
+                            </div>
+                        </div>
+                        <form class="auth-form" method="post">
+                            {% csrf_token %}
+                            <label>
+                                <span>Full name</span>
+                                {{ profile_form.full_name }}
+                                {% for error in profile_form.full_name.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                            </label>
+                            <label>
+                                <span>Company or brand</span>
+                                {{ profile_form.company_name }}
+                                {% for error in profile_form.company_name.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                            </label>
+                            <label>
+                                <span>Focus</span>
+                                {{ profile_form.focus }}
+                                {% for error in profile_form.focus.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                            </label>
+                            <label class="checkbox-row">
+                                {{ profile_form.wants_pro_updates }}
+                                <span>Keep me on the Pro v2.0 update list</span>
+                            </label>
+                            {% for error in profile_form.non_field_errors %}<p class="field-error">{{ error }}</p>{% endfor %}
+                            <button class="btn btn-primary" type="submit">Save profile</button>
+                        </form>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Recent activity</p>
+                                <h2>What this account has done recently</h2>
+                            </div>
+                        </div>
+                        {% if recent_events %}
+                            <ul class="activity-list">
+                                {% for event in recent_events %}
+                                    <li>{{ event.get_event_type_display }} on {{ event.created_at|date:"d M Y H:i" }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p class="panel-copy">No tracked account events yet.</p>
+                        {% endif %}
+                    </article>
+                </div>
+
+                <aside class="app-side-column">
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Account status</p>
+                                <h2>Current product access</h2>
+                            </div>
+                        </div>
+                        <dl class="profile-list">
+                            <div>
+                                <dt>Email</dt>
+                                <dd>{{ request.user.email }}</dd>
+                            </div>
+                            <div>
+                                <dt>Focus</dt>
+                                <dd>{{ request.user.profile.focus }}</dd>
+                            </div>
+                            <div>
+                                <dt>Base access</dt>
+                                <dd>{{ request.user.profile.get_base_purchase_status_display }}</dd>
+                            </div>
+                            <div>
+                                <dt>Pro updates</dt>
+                                <dd>{% if request.user.profile.wants_pro_updates %}Enabled{% else %}Off{% endif %}</dd>
+                            </div>
+                        </dl>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Actions</p>
+                                <h2>Product links</h2>
+                            </div>
+                        </div>
+                        <div class="stack-actions">
+                            <a class="btn btn-primary" href="{% url 'base-checkout' %}">Buy Base Version</a>
+                            <form method="post" action="{% url 'join-pro-waitlist' %}" class="inline-form">
+                                {% csrf_token %}
+                                <button class="btn btn-secondary" type="submit">Join Pro v2.0 waitlist</button>
+                            </form>
+                            {% if user.is_staff %}
+                                <a class="btn btn-ghost" href="{% url 'control' %}">Open control panel</a>
+                                <a class="btn btn-ghost" href="{% url 'admin:index' %}">Open admin</a>
+                            {% endif %}
+                        </div>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Visit log</p>
+                                <h2>Recent tracked visits</h2>
+                            </div>
+                        </div>
+                        {% if recent_visits %}
+                            <ul class="activity-list">
+                                {% for visit in recent_visits %}
+                                    <li>{{ visit.path }} on {{ visit.created_at|date:"d M Y H:i" }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p class="panel-copy">No tracked visits yet for this account.</p>
+                        {% endif %}
+                    </article>
+                </aside>
+            </div>
+        </section>
+    </main>
+{% endblock %}
