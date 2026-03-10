@@ -204,8 +204,27 @@ def render_quotes(items):
 def render_plan_cards(items):
     parts = []
     for index, item in enumerate(items):
-        highlight = " is-featured" if index == 1 else ""
+        highlight = " is-featured" if item.get("featured") else ""
         features = render_list(item["features"], indent="                                ")
+        description = (
+            f'                            <p class="plan-description">{escape(item["description"])}</p>'
+            if item.get("description")
+            else ""
+        )
+        if item.get("url"):
+            cta_markup = (
+                f'                            <a class="btn {"btn-primary" if item.get("featured") else "btn-secondary"}" '
+                f'href="{escape(item["url"])}" target="_blank" rel="noopener">{escape(item["cta"])}</a>'
+            )
+        elif item.get("disabled"):
+            cta_markup = (
+                f'                            <span class="btn btn-disabled" aria-disabled="true">{escape(item["cta"])}</span>'
+            )
+        else:
+            cta_markup = (
+                f'                            <button class="btn {"btn-primary" if index == 1 else "btn-secondary"} js-open-register" '
+                f'type="button" data-plan="{escape(item["name"])}">{escape(item["cta"])}</button>'
+            )
         parts.append(
             "\n".join(
                 [
@@ -216,10 +235,11 @@ def render_plan_cards(items):
                     f'                                <span>{escape(item["price"])}</span>',
                     f'                                <small>{escape(item["billing"])}</small>',
                     "                            </div>",
+                    description,
                     '                            <ul class="plan-list">',
                     features,
                     "                            </ul>",
-                    f'                            <button class="btn {"btn-primary" if index == 1 else "btn-secondary"} js-open-register" type="button" data-plan="{escape(item["name"])}">{escape(item["cta"])}</button>',
+                    cta_markup,
                     "                        </article>",
                 ]
             )
@@ -339,6 +359,7 @@ def build():
         "__HERO_TITLE__": escape(content["hero_title"]),
         "__HERO_LEAD__": escape(content["hero_lead"]),
         "__HERO_PRIMARY_TEXT__": escape(content["hero_primary_text"]),
+        "__HERO_PRIMARY_URL__": escape(content["hero_primary_url"]),
         "__HERO_SECONDARY_TEXT__": escape(content["hero_secondary_text"]),
         "__HERO_STATUS__": escape(content["hero_status"]),
         "__HERO_CONSOLE_TITLE__": escape(content["hero_console_title"]),
@@ -389,6 +410,7 @@ def build():
         "__CTA_HEADING__": escape(content["section_labels"]["cta_heading"]),
         "__CTA_COPY__": escape(content["section_labels"]["cta_copy"]),
         "__CTA_PRIMARY_TEXT__": escape(content["cta_primary_text"]),
+        "__CTA_PRIMARY_URL__": escape(content["cta_primary_url"]),
         "__CTA_SECONDARY_TEXT__": escape(content["cta_secondary_text"]),
         "__REGISTER_TITLE__": escape(content["register"]["title"]),
         "__REGISTER_COPY__": escape(content["register"]["copy"]),

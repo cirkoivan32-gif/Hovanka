@@ -2,8 +2,8 @@
   "brand": "Codevanta",
   "site_name": "Codevanta",
   "site_url": "https://codevanta.onrender.com",
-  "meta_title": "Codevanta | AI Crypto Automation Workspace",
-  "meta_description": "Codevanta is a crypto automation workspace with AI-guided bot modes, signal scoring, portfolio guardrails, and a fast operator dashboard.",
+  "meta_title": "Codevanta | Base Crypto AI Program + Pro v2.0 Roadmap",
+  "meta_description": "Codevanta Base is the current $3 crypto AI decision-support program. Pro v2.0 is in development with broader filters, stronger workflow review, and a cleaner operator panel.",
   "google_site_verification": "",
   "nav_links": [
     {
@@ -23,10 +23,11 @@
       "href": "#faq"
     }
   ],
-  "hero_badge": "AI-guided crypto automation workspace",
-  "hero_title": "Codevanta builds calmer trading flows out of chaotic crypto markets.",
-  "hero_lead": "Launch bot strategies, score setups before you commit, and run your daily market routine from one focused control surface instead of five noisy tabs.",
-  "hero_primary_text": "Create Workspace",
+  "hero_badge": "Base version live / $3 one-time / Pro v2.0 in development",
+  "hero_title": "Codevanta Base is live now. Pro v2.0 is already in development.",
+  "hero_lead": "The current base release is a lightweight crypto AI decision-support program: market scan, weak-setup filtering, setup scoring, and a local workspace flow. Pro v2.0 is planned as the next stronger release, not as something already shipped.",
+  "hero_primary_text": "Buy Base Version - $3",
+  "hero_primary_url": "https://payhip.com/b/50WXH",
   "hero_secondary_text": "See Bot Modes",
   "hero_status": "Live sandbox preview",
   "hero_console_title": "Operator Console",
@@ -83,14 +84,14 @@
     "quotes_heading": "What the workspace changes for active crypto traders",
     "quotes_intro": "These are the kinds of workflow gains the product is designed to create.",
     "plans_eyebrow": "Pricing",
-    "plans_heading": "Start free, then scale into deeper automation",
-    "plans_intro": "You can enter through a free workspace and unlock higher-capacity bot plans only when your process is ready.",
+    "plans_heading": "Base version is available now. Pro v2.0 is still in development.",
+    "plans_intro": "The current public release is the base program for $3 as a one-time purchase. Pro v2.0 is the next roadmap build with broader analysis depth and a cleaner operator workflow.",
     "faq_eyebrow": "FAQ",
     "faq_heading": "Questions traders usually ask before they commit",
     "faq_intro": "Short answers to the operational questions that matter before onboarding.",
     "cta_eyebrow": "Ready to move",
-    "cta_heading": "Build a Codevanta workspace and test your flow before risking size.",
-    "cta_copy": "Register in under a minute, open the sandbox app, and see how the platform organizes your market routine."
+    "cta_heading": "Buy the current base version for $3 and track the Pro v2.0 roadmap separately.",
+    "cta_copy": "If you want the working release today, use the base version. If you want the more advanced release with broader analysis layers, that is the Pro v2.0 line now in development."
   },
   "bot_profiles": [
     {
@@ -274,43 +275,35 @@
   ],
   "plans": [
     {
-      "name": "Starter",
-      "price": "$0",
-      "billing": "free workspace",
-      "badge": "For first-time operators",
+      "name": "Base Version",
+      "price": "$3",
+      "billing": "one-time",
+      "badge": "Current public release",
+      "description": "This is the real working base build available now. It is not a full SaaS suite and it is not pretending to be the future Pro release.",
       "features": [
-        "1 sandbox workspace",
-        "2 bot modes unlocked",
-        "Local account access",
-        "Manual review dashboard"
+        "Real-time market scan and setup review",
+        "Signal filtering using EMA, RSI, ATR, and VWAP context",
+        "Cleaner decision-support before entry",
+        "Lightweight local workspace flow"
       ],
-      "cta": "Create Free Access"
+      "cta": "Buy on Payhip",
+      "url": "https://payhip.com/b/50WXH",
+      "featured": true
     },
     {
-      "name": "Operator",
-      "price": "$19",
-      "billing": "per month",
-      "badge": "Most popular",
+      "name": "Pro v2.0",
+      "price": "Soon",
+      "billing": "in development",
+      "badge": "Next roadmap build",
+      "description": "This version is not released yet. It is the planned stronger build with broader filters, refined workflow review, and more mature operator logic.",
       "features": [
-        "All 5 bot modes",
-        "AI scoring layers",
-        "Expanded watchlists",
-        "Priority automation templates"
+        "Broader multi-condition market scoring",
+        "Cleaner workflow review and stronger setup confirmation",
+        "More refined strategy modules and analysis depth",
+        "Status: roadmap only, not shipping yet"
       ],
-      "cta": "Join Waitlist"
-    },
-    {
-      "name": "Desk",
-      "price": "$59",
-      "billing": "per month",
-      "badge": "For serious teams",
-      "features": [
-        "Multi-workspace routing",
-        "Team seats and review roles",
-        "Advanced risk presets",
-        "Connector automations"
-      ],
-      "cta": "Book Setup Call"
+      "cta": "In Development",
+      "disabled": true
     }
   ],
   "faq": [
@@ -331,7 +324,8 @@
       "answer": "No. The operator flow is meant to feel like a control panel, not a developer console."
     }
   ],
-  "cta_primary_text": "Register Free",
+  "cta_primary_text": "Buy Base Version",
+  "cta_primary_url": "https://payhip.com/b/50WXH",
   "cta_secondary_text": "Open Sandbox App",
   "register": {
     "title": "Create your Codevanta workspace",
