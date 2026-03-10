@@ -20,5 +20,5 @@ urlpatterns = [
     path("app/", dashboard, name="dashboard"),
     path("waitlist/pro/", join_pro_waitlist, name="join-pro-waitlist"),
     path("checkout/base/", base_checkout_redirect, name="base-checkout"),
-    path("control/", control_panel, name="control"),
+    path("ops/", control_panel, name="control"),
 ]

@@ -14,7 +14,7 @@
 - `/accounts/register/` real account registration
 - `/accounts/login/` sign in
 - `/app/` user dashboard
-- `/control/` staff analytics dashboard
+- `/ops/` staff analytics dashboard
 - `/admin/` admin area
 - `/checkout/base/` tracked redirect to the Payhip base product
 
@@ -60,7 +60,7 @@ python manage.py ensure_admin
 Where to manage the site:
 
 - content, users, purchase status, and logs: `/admin/`
-- summarized site statistics: `/control/`
+- summarized site statistics: `/ops/`
 
 What is tracked:
 
