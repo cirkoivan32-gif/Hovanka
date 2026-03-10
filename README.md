@@ -1,91 +1,53 @@
 # Crypto AI Landing Page
 
-Minimal Django landing page for selling Crypto AI and deploying it to Render on a public `*.onrender.com` domain.
+Static landing page build for Render Static Sites. Static sites do not sleep after inactivity, so this is the production path for `codevanta.onrender.com`.
 
-## Local run
+## Static production
+
+Production now builds from:
+
+- [content/site.json](content/site.json) for text, links, and SEO values
+- [site_static/index.template.html](site_static/index.template.html) for layout
+- [static/css/style.css](static/css/style.css) for styling
+- [scripts/build_static.py](scripts/build_static.py) to generate `dist/`
+
+Build locally:
 
 ```bash
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# macOS/Linux
-source .venv/bin/activate
-
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
+python scripts/build_static.py
 ```
 
-Open `http://127.0.0.1:8000` and manage the site through `http://127.0.0.1:8000/admin/`.
+Generated files land in `dist/`:
 
-## Environment variables
-
-Copy `.env.example` into your preferred local env workflow, or set variables manually:
-
-- `DJANGO_SECRET_KEY`: required when `DJANGO_DEBUG=False`
-- `DJANGO_DEBUG`: `True` locally, `False` on Render
-- `DJANGO_ALLOWED_HOSTS`: optional comma-separated extra hosts
-- `DJANGO_CSRF_TRUSTED_ORIGINS`: optional comma-separated origins with scheme
-- `DJANGO_SITE_URL`: canonical public URL such as `https://codevanta.onrender.com`
-- `GOOGLE_SITE_VERIFICATION`: optional Search Console verification token
-- `DJANGO_SUPERUSER_USERNAME`: optional env-based admin username
-- `DJANGO_SUPERUSER_EMAIL`: optional env-based admin email
-- `DJANGO_SUPERUSER_PASSWORD`: optional env-based admin password
-- `DATABASE_URL`: optional if you later attach PostgreSQL or another supported database
-
-`RENDER_EXTERNAL_HOSTNAME` is injected automatically by Render and is used to extend `ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS`, and `SITE_URL`.
+- `dist/index.html`
+- `dist/robots.txt`
+- `dist/sitemap.xml`
+- `dist/assets/style.css`
 
 ## Render deploy
 
-Manual dashboard setup:
+The included [render.yaml](render.yaml) is now configured for a Render Static Site:
 
-- Runtime: `Python 3`
-- Build command: `bash build.sh`
-- Start command: `gunicorn config.wsgi:application --bind 0.0.0.0:$PORT`
-- Plan: `Free`
-- Env vars:
-  - `DJANGO_SECRET_KEY`
-  - `DJANGO_DEBUG=False`
-  - `DJANGO_SITE_URL=https://codevanta.onrender.com`
-  - optional `DJANGO_SUPERUSER_USERNAME`
-  - optional `DJANGO_SUPERUSER_EMAIL`
-  - optional `DJANGO_SUPERUSER_PASSWORD`
+- Runtime: `static`
+- Build command: `python scripts/build_static.py`
+- Publish directory: `dist`
 
-Or deploy with the included `render.yaml` blueprint.
+Static Sites do not use Django, Gunicorn, or a database in production, so there is no sleep/wake delay on free hosting.
 
-Important for a public Google-indexed site: Render's Free web services spin down after 15 minutes of inactivity, and while they are spun down Render automatically responds to `/robots.txt` with a disallow-all response. Free web services are fine for testing, but they are not a strong production SEO choice.
+## Content changes
 
-Render web services must bind to `0.0.0.0`, which is why the included start command explicitly uses `--bind 0.0.0.0:$PORT`.
+To change live content:
 
-## Google indexing
+1. Edit [content/site.json](content/site.json)
+2. Push to GitHub
+3. Render rebuilds the static site automatically
 
-After deploy:
+To verify Google Search Console later, set `google_site_verification` in [content/site.json](content/site.json), or pass `GOOGLE_SITE_VERIFICATION` during build.
 
-- Keep `DJANGO_DEBUG=False`
-- Confirm `robots.txt` and `sitemap.xml` are reachable on the public domain
-- Add the site in Google Search Console
-- Submit `https://your-domain/sitemap.xml` in Search Console
-- Add `GOOGLE_SITE_VERIFICATION` if Google asks for a meta-tag verification token
-- If SEO matters, avoid a host or plan that serves a temporary disallow-all `robots.txt` while the site is asleep
+## Local Django
 
-## Content management
+The Django project is still in the repo, but it is no longer the production deployment path. That means:
 
-The landing page content is editable through Django admin.
-
-- Log in at `/admin/`
-- Edit the single `Landing page` record and its inline sections
-- For persistent production edits, prefer Postgres via `DATABASE_URL`
-- If you choose Render's Free Postgres, remember that Render documents a 30-day expiration for that database
-
-Important: a free Render web service does not give you a persistent disk, so SQLite is not a safe long-term choice for editable production content.
-
-## Production checks
-
-Run these before shipping:
-
-```bash
-python manage.py collectstatic --no-input
-python manage.py check
-python manage.py check --deploy
-```
+- `/admin/` is not part of the live static site
+- content is managed through Git instead of Django admin
+- the Django code can still be used locally if you want to keep it as a draft/back-office project

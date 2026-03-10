@@ -1,14 +1,7 @@
 services:
   - type: web
     name: codevanta
-    env: python
-    plan: free
-    buildCommand: bash build.sh
-    startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
-    envVars:
-      - key: DJANGO_SECRET_KEY
-        generateValue: true
-      - key: DJANGO_DEBUG
-        value: "False"
-      - key: DJANGO_SITE_URL
-        value: https://codevanta.onrender.com
+    runtime: static
+    buildCommand: python scripts/build_static.py
+    staticPublishPath: dist
+    pullRequestPreviewsEnabled: false

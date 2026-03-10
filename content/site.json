@@ -1,0 +1,108 @@
+{
+  "site_name": "Crypto AI",
+  "site_url": "https://codevanta.onrender.com",
+  "meta_title": "Crypto AI | Real-Time Crypto Market Signal Support",
+  "meta_description": "Crypto AI scans market structure in real time, filters weak setups, and helps traders focus on higher-quality crypto entries.",
+  "google_site_verification": "",
+  "badge_text": "Launch access / $3",
+  "hero_title": "Crypto AI finds cleaner setups before emotion takes over.",
+  "hero_lead": "Watch the market in real time, filter weak entries, and focus on moves that deserve attention instead of chasing candles.",
+  "primary_button_text": "Buy Now",
+  "primary_button_url": "https://payhip.com/b/50WXH",
+  "secondary_button_text": "See Features",
+  "hero_card_label": "Launch package",
+  "price_text": "$3",
+  "price_note": "one-time launch access",
+  "hero_card_copy": "Get access to the launch version now and use it as a decision-support layer before making crypto entries.",
+  "disclaimer": "Decision-support software. It does not guarantee profits and should not replace risk management.",
+  "features_eyebrow": "Core features",
+  "features_heading": "What Crypto AI actually does",
+  "features_intro": "Built to reduce emotional entries and turn noisy market behavior into cleaner, more readable decision support.",
+  "why_eyebrow": "Why it matters",
+  "why_heading": "Most losses start before the trade is even opened.",
+  "why_copy": "Traders usually get hurt by timing mistakes, weak conviction, or entering on noise. Crypto AI is built to slow that process down and surface better moments for review.",
+  "workflow_eyebrow": "Simple workflow",
+  "workflow_heading": "Use it in three clear steps",
+  "workflow_intro": "The workflow stays simple so you can move from market scan to action without getting buried in unnecessary complexity.",
+  "cta_eyebrow": "Ready to test it",
+  "cta_heading": "Get Crypto AI for the $3 launch price.",
+  "cta_copy": "Early access is intentionally priced low so you can test the launch version before the future PRO upgrade expands the feature set.",
+  "cta_button_text": "Buy on Payhip",
+  "footer_text": "Crypto AI is built for market decision support, not guaranteed returns.",
+  "proof_points": [
+    "Live market structure snapshots",
+    "Signal filtering before you enter",
+    "Paper-trade style review logic"
+  ],
+  "stats": [
+    {
+      "value": "EMA + RSI + ATR + VWAP",
+      "label": "Indicator stack behind the signal review"
+    },
+    {
+      "value": "Weak setups out",
+      "label": "Focus on fewer, better market moments"
+    },
+    {
+      "value": "PRO version soon",
+      "label": "Planned expansion with deeper strategy and news-aware logic"
+    }
+  ],
+  "features": [
+    {
+      "title": "Real-Time Analysis",
+      "description": "Tracks live OHLCV behavior so decisions are based on the current tape, not on delayed screenshots."
+    },
+    {
+      "title": "Signal Filtering",
+      "description": "Filters weak setups and low-quality entries before FOMO or revenge trading takes over."
+    },
+    {
+      "title": "Indicator Stack",
+      "description": "Combines EMA, RSI, ATR, VWAP, and volatility context to improve the quality of trade selection."
+    },
+    {
+      "title": "Paper Trade Review",
+      "description": "Helps evaluate how signals would have behaved without forcing you to risk capital first."
+    },
+    {
+      "title": "Adaptive Learning",
+      "description": "Built to evolve as new market data arrives so the model can improve with fresh conditions."
+    },
+    {
+      "title": "PRO Upgrade Path",
+      "description": "A future PRO version can expand into additional strategies, stronger AI logic, and news-aware analysis."
+    }
+  ],
+  "reasons": [
+    {
+      "title": "Less emotional timing",
+      "description": "Cuts down entries triggered by hype, panic, or fast-moving candles."
+    },
+    {
+      "title": "Cleaner market focus",
+      "description": "Keeps attention on setups that deserve review instead of every chart move."
+    },
+    {
+      "title": "Faster decision support",
+      "description": "Turns multiple indicators into one readable decision layer."
+    }
+  ],
+  "steps": [
+    {
+      "number": "01",
+      "title": "Scan the market",
+      "description": "Monitor live crypto behavior and let the software highlight structure worth attention."
+    },
+    {
+      "number": "02",
+      "title": "Filter the setup",
+      "description": "Check whether the move still has quality after momentum, volatility, and trend filters."
+    },
+    {
+      "number": "03",
+      "title": "Act with context",
+      "description": "Use the signal as decision support and keep risk management in your own hands."
+    }
+  ]
+}

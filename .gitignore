@@ -11,3 +11,4 @@ RENDER_ENV_TO_SET.txt
 runserver.out.log
 runserver.err.log
 staticfiles/
+dist/
