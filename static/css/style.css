@@ -975,6 +975,11 @@ p {
     padding: 1rem;
 }
 
+.modal-layer[hidden],
+.modal-card[hidden] {
+    display: none;
+}
+
 .modal-backdrop {
     position: absolute;
     inset: 0;
