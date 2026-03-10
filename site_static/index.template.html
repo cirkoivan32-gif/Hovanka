@@ -16,113 +16,310 @@
     <meta name="twitter:description" content="__META_DESCRIPTION__">
 __GOOGLE_SITE_VERIFICATION__    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
-    <div class="page-shell">
-        <header class="hero">
-            <div class="hero-glow hero-glow-left"></div>
-            <div class="hero-glow hero-glow-right"></div>
-            <div class="container hero-grid">
+<body data-page="marketing">
+    <div class="site-bg">
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+    </div>
+
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <a class="brandmark" href="/">
+                <span class="brandmark-icon"></span>
+                <span>__BRAND__</span>
+            </a>
+            <nav class="topnav" aria-label="Primary navigation">
+__NAV_LINKS__
+            </nav>
+            <div class="topbar-actions">
+                <a class="btn btn-ghost" href="/app/">Open app</a>
+                <button class="btn btn-primary js-open-register" type="button">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-block">
+            <div class="container hero-layout">
                 <div class="hero-copy">
-                    <p class="eyebrow">__BADGE_TEXT__</p>
+                    <p class="pill">__HERO_BADGE__</p>
                     <h1>__HERO_TITLE__</h1>
-                    <p class="lead">__HERO_LEAD__</p>
+                    <p class="hero-lead">__HERO_LEAD__</p>
+
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="__PRIMARY_BUTTON_URL__" target="_blank" rel="noopener">__PRIMARY_BUTTON_TEXT__</a>
-                        <a class="btn btn-secondary" href="#features">__SECONDARY_BUTTON_TEXT__</a>
+                        <button class="btn btn-primary js-open-register" type="button">__HERO_PRIMARY_TEXT__</button>
+                        <a class="btn btn-secondary" href="#bots">__HERO_SECONDARY_TEXT__</a>
                     </div>
-                    <ul class="hero-highlights" aria-label="__SITE_NAME__ highlights">
-__PROOF_POINTS__
-                    </ul>
+
+                    <div class="hero-points">
+                        <ul>
+__HERO_POINTS__
+                        </ul>
+                    </div>
+
+                    <div class="metric-grid">
+__HERO_METRICS__
+                    </div>
                 </div>
 
-                <aside class="hero-card">
-                    <p class="mini-label">__HERO_CARD_LABEL__</p>
-                    <div class="price-row">
-                        <span class="price">__PRICE_TEXT__</span>
-                        <span class="price-note">__PRICE_NOTE__</span>
+                <aside class="hero-console reveal">
+                    <div class="console-head">
+                        <p class="mini-eyebrow">__HERO_STATUS__</p>
+                        <span class="live-dot"></span>
                     </div>
-                    <p class="card-copy">__HERO_CARD_COPY__</p>
-                    <ul class="check-list">
-__CHECK_LIST__
-                    </ul>
-                    <a class="btn btn-primary btn-block" href="__PRIMARY_BUTTON_URL__" target="_blank" rel="noopener">__PRIMARY_BUTTON_TEXT__</a>
-                    <p class="disclaimer">__DISCLAIMER__</p>
+                    <div class="console-screen">
+                        <div class="console-title-row">
+                            <div>
+                                <p class="console-overline">__HERO_CONSOLE_TITLE__</p>
+                                <h2>__HERO_CONSOLE_COPY__</h2>
+                            </div>
+                            <span class="console-pill">__CONSOLE_PAIR__</span>
+                        </div>
+
+                        <div class="console-grid">
+                            <article class="console-card">
+                                <p class="console-label">Signal score</p>
+                                <strong>__CONSOLE_SIGNAL_SCORE__</strong>
+                            </article>
+                            <article class="console-card">
+                                <p class="console-label">Market mode</p>
+                                <strong>__CONSOLE_MARKET_MODE__</strong>
+                            </article>
+                            <article class="console-card">
+                                <p class="console-label">Risk band</p>
+                                <strong>__CONSOLE_RISK_BAND__</strong>
+                            </article>
+                            <article class="console-card">
+                                <p class="console-label">Selected bot</p>
+                                <strong>__CONSOLE_BOT_NAME__</strong>
+                                <small>__CONSOLE_BOT_STATE__</small>
+                            </article>
+                        </div>
+
+                        <div class="console-checklist">
+                            <p class="console-label">Session checkpoints</p>
+                            <ul>
+__CONSOLE_CHECKPOINTS__
+                            </ul>
+                        </div>
+                    </div>
                 </aside>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <section class="section stats-section">
-                <div class="container stats-grid">
-__STATS_GRID__
+        <section id="bots" class="section">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">__BOTS_EYEBROW__</p>
+                    <h2>__BOTS_HEADING__</h2>
+                    <p>__BOTS_INTRO__</p>
                 </div>
-            </section>
 
-            <section id="features" class="section">
-                <div class="container">
-                    <div class="section-heading">
-                        <p class="eyebrow">__FEATURES_EYEBROW__</p>
-                        <h2>__FEATURES_HEADING__</h2>
-                        <p>__FEATURES_INTRO__</p>
+                <div class="bot-showcase">
+                    <div class="bot-tabs" role="tablist" aria-label="Bot modes">
+__BOT_TABS__
                     </div>
-                    <div class="feature-grid">
-__FEATURE_CARDS__
+                    <div class="bot-panels">
+__BOT_PANELS__
                     </div>
                 </div>
-            </section>
-
-            <section class="section section-contrast">
-                <div class="container value-grid">
-                    <div>
-                        <p class="eyebrow">__WHY_EYEBROW__</p>
-                        <h2>__WHY_HEADING__</h2>
-                        <p class="value-copy">__WHY_COPY__</p>
-                    </div>
-                    <div class="value-cards">
-__REASON_CARDS__
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="container">
-                    <div class="section-heading">
-                        <p class="eyebrow">__WORKFLOW_EYEBROW__</p>
-                        <h2>__WORKFLOW_HEADING__</h2>
-                        <p>__WORKFLOW_INTRO__</p>
-                    </div>
-                    <div class="steps-grid">
-__STEP_CARDS__
-                    </div>
-                </div>
-            </section>
-
-            <section id="buy" class="section">
-                <div class="container">
-                    <div class="cta-panel">
-                        <div>
-                            <p class="eyebrow">__CTA_EYEBROW__</p>
-                            <h2>__CTA_HEADING__</h2>
-                            <p>__CTA_COPY__</p>
-                        </div>
-                        <div class="cta-actions">
-                            <p class="price compact">__PRICE_TEXT__</p>
-                            <a class="btn btn-primary" href="__PRIMARY_BUTTON_URL__" target="_blank" rel="noopener">__CTA_BUTTON_TEXT__</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="container footer-content">
-                <p>__FOOTER_TEXT__</p>
-                <a href="__PRIMARY_BUTTON_URL__" target="_blank" rel="noopener">Open checkout</a>
             </div>
-        </footer>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">__ADVANTAGES_EYEBROW__</p>
+                    <h2>__ADVANTAGES_HEADING__</h2>
+                    <p>__ADVANTAGES_INTRO__</p>
+                </div>
+                <div class="advantage-grid">
+__ADVANTAGE_CARDS__
+                </div>
+            </div>
+        </section>
+
+        <section id="workflow" class="section">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">__WORKFLOW_EYEBROW__</p>
+                    <h2>__WORKFLOW_HEADING__</h2>
+                    <p>__WORKFLOW_INTRO__</p>
+                </div>
+                <div class="workflow-grid">
+__WORKFLOW_CARDS__
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">__COMPARISON_EYEBROW__</p>
+                    <h2>__COMPARISON_HEADING__</h2>
+                    <p>__COMPARISON_INTRO__</p>
+                </div>
+                <div class="comparison-shell reveal">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Capability</th>
+                                <th scope="col">Codevanta</th>
+                                <th scope="col">Manual flow</th>
+                                <th scope="col">Basic exchange tools</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+__COMPARISON_ROWS__
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container connector-layout">
+                <div class="section-copy">
+                    <p class="pill">__CONNECTORS_EYEBROW__</p>
+                    <h2>__CONNECTORS_HEADING__</h2>
+                    <p>__CONNECTORS_INTRO__</p>
+                </div>
+                <ul class="connector-grid" aria-label="Supported connectors">
+__CONNECTOR_CHIPS__
+                </ul>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">__QUOTES_EYEBROW__</p>
+                    <h2>__QUOTES_HEADING__</h2>
+                    <p>__QUOTES_INTRO__</p>
+                </div>
+                <div class="quote-grid">
+__QUOTE_CARDS__
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <div class="container">
+                <div class="section-copy">
+                    <p class="pill">__PLANS_EYEBROW__</p>
+                    <h2>__PLANS_HEADING__</h2>
+                    <p>__PLANS_INTRO__</p>
+                </div>
+                <div class="plan-grid">
+__PLAN_CARDS__
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section section-alt">
+            <div class="container faq-layout">
+                <div class="section-copy">
+                    <p class="pill">__FAQ_EYEBROW__</p>
+                    <h2>__FAQ_HEADING__</h2>
+                    <p>__FAQ_INTRO__</p>
+                </div>
+                <div class="faq-list">
+__FAQ_ITEMS__
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container cta-shell reveal">
+                <div>
+                    <p class="pill">__CTA_EYEBROW__</p>
+                    <h2>__CTA_HEADING__</h2>
+                    <p>__CTA_COPY__</p>
+                </div>
+                <div class="cta-actions">
+                    <button class="btn btn-primary js-open-register" type="button">__CTA_PRIMARY_TEXT__</button>
+                    <a class="btn btn-ghost" href="/app/">__CTA_SECONDARY_TEXT__</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a class="brandmark" href="/">
+                <span class="brandmark-icon"></span>
+                <span>__BRAND__</span>
+            </a>
+            <p>__FOOTER_TEXT__</p>
+        </div>
+    </footer>
+
+    <div class="modal-layer" data-modal-layer hidden>
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-shell">
+            <section class="modal-card" data-modal="register" hidden>
+                <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">×</button>
+                <p class="pill">Instant workspace access</p>
+                <h2>__REGISTER_TITLE__</h2>
+                <p class="modal-copy">__REGISTER_COPY__</p>
+                <ul class="modal-benefits">
+__REGISTER_BENEFITS__
+                </ul>
+                <form class="auth-form" data-auth-form="register">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="name" placeholder="Your operator name" required>
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password" placeholder="At least 8 characters" minlength="8" required>
+                    </label>
+                    <label>
+                        <span>Focus</span>
+                        <select name="focus">
+                            <option value="Spot swing">Spot swing</option>
+                            <option value="Futures momentum">Futures momentum</option>
+                            <option value="DCA building">DCA building</option>
+                            <option value="Mixed routine">Mixed routine</option>
+                        </select>
+                    </label>
+                    <button class="btn btn-primary" type="submit">Create local workspace</button>
+                    <p class="form-status" data-form-status="register" aria-live="polite"></p>
+                </form>
+                <p class="modal-switch">Already registered? <button type="button" class="link-button" data-switch-modal="login">Log in</button></p>
+            </section>
+
+            <section class="modal-card" data-modal="login" hidden>
+                <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">×</button>
+                <p class="pill">Welcome back</p>
+                <h2>__LOGIN_TITLE__</h2>
+                <p class="modal-copy">__LOGIN_COPY__</p>
+                <form class="auth-form" data-auth-form="login">
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password" placeholder="Your saved password" minlength="8" required>
+                    </label>
+                    <button class="btn btn-primary" type="submit">Open workspace</button>
+                    <p class="form-status" data-form-status="login" aria-live="polite"></p>
+                </form>
+                <p class="modal-hint">__LOGIN_HELP__</p>
+                <p class="modal-switch">Need a new account? <button type="button" class="link-button" data-switch-modal="register">Register</button></p>
+            </section>
+        </div>
     </div>
+
+    <script id="site-data" type="application/json">__SITE_DATA_JSON__</script>
+    <script src="/assets/site.js" defer></script>
 </body>
 </html>

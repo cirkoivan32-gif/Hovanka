@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__BRAND__ Workspace</title>
+    <meta name="description" content="__APP_COPY__">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="canonical" href="__CANONICAL_URL__">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body data-page="app">
+    <div class="site-bg">
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+    </div>
+
+    <header class="topbar topbar-app">
+        <div class="container topbar-inner">
+            <a class="brandmark" href="/">
+                <span class="brandmark-icon"></span>
+                <span>__BRAND__</span>
+            </a>
+            <div class="workspace-user">
+                <div class="workspace-user-copy">
+                    <span class="mono">Sandbox workspace</span>
+                    <strong data-session-name>Guest operator</strong>
+                </div>
+                <button class="btn btn-ghost" type="button" data-logout-button>Log out</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <section class="app-hero">
+            <div class="container app-hero-inner">
+                <div>
+                    <p class="pill">__APP_EYEBROW__</p>
+                    <h1>__APP_TITLE__</h1>
+                    <p class="hero-lead">__APP_COPY__</p>
+                </div>
+                <div class="app-hero-actions">
+                    <a class="btn btn-secondary" href="/">Back to site</a>
+                    <button class="btn btn-primary js-open-login" type="button">Switch account</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section app-section">
+            <div class="container app-layout">
+                <div class="app-main-column">
+                    <div class="app-stat-grid">
+__APP_STATS__
+                    </div>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Priority watchlist</p>
+                                <h2>Market focus for this session</h2>
+                            </div>
+                            <span class="console-pill" data-session-focus>Mixed routine</span>
+                        </div>
+                        <div class="table-scroll">
+                            <table class="comparison-table app-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Pair</th>
+                                        <th scope="col">Mode</th>
+                                        <th scope="col">Score</th>
+                                        <th scope="col">State</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+__WATCHLIST_ROWS__
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Strategy rooms</p>
+                                <h2>Bot stack inside the workspace</h2>
+                            </div>
+                            <span class="mono">Local sandbox data</span>
+                        </div>
+                        <div class="room-grid">
+                            <article class="room-card">
+                                <strong>Combo Engine</strong>
+                                <p>Adaptive score threshold for multi-condition deployment.</p>
+                                <span>Status: primed</span>
+                            </article>
+                            <article class="room-card">
+                                <strong>Dip Hunter</strong>
+                                <p>Watching fast pullback structures for clean re-entry conditions.</p>
+                                <span>Status: confirmation</span>
+                            </article>
+                            <article class="room-card">
+                                <strong>DCA Shield</strong>
+                                <p>Capital ladder staged with exposure caps and review checkpoints.</p>
+                                <span>Status: protected</span>
+                            </article>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="app-side-column">
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Operator identity</p>
+                                <h2>Current workspace profile</h2>
+                            </div>
+                        </div>
+                        <dl class="profile-list">
+                            <div>
+                                <dt>Name</dt>
+                                <dd data-profile-name>Guest operator</dd>
+                            </div>
+                            <div>
+                                <dt>Email</dt>
+                                <dd data-profile-email>Not connected</dd>
+                            </div>
+                            <div>
+                                <dt>Focus</dt>
+                                <dd data-profile-focus>Mixed routine</dd>
+                            </div>
+                        </dl>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Activity</p>
+                                <h2>Latest sandbox signals</h2>
+                            </div>
+                        </div>
+                        <ul class="activity-list">
+__APP_ACTIVITY__
+                        </ul>
+                    </article>
+
+                    <article class="panel-card reveal">
+                        <div class="panel-head">
+                            <div>
+                                <p class="mini-eyebrow">Next move</p>
+                                <h2>Upgrade path</h2>
+                            </div>
+                        </div>
+                        <p class="panel-copy">Use the static workspace as the public demo layer. If you need real server-side auth and persistent user accounts, the next step is attaching a backend auth service and database.</p>
+                        <a class="btn btn-primary" href="/">Back to pricing</a>
+                    </article>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-layer" data-modal-layer hidden>
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-shell">
+            <section class="modal-card" data-modal="login" hidden>
+                <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">×</button>
+                <p class="pill">Workspace access</p>
+                <h2>Open your saved sandbox</h2>
+                <p class="modal-copy">Log in with the local account saved in this browser.</p>
+                <form class="auth-form" data-auth-form="login">
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password" placeholder="Your saved password" minlength="8" required>
+                    </label>
+                    <button class="btn btn-primary" type="submit">Open workspace</button>
+                    <p class="form-status" data-form-status="login" aria-live="polite"></p>
+                </form>
+                <p class="modal-switch">Need an account first? <a class="link-inline" href="/">Register on the main page</a></p>
+            </section>
+        </div>
+    </div>
+
+    <script id="site-data" type="application/json">__SITE_DATA_JSON__</script>
+    <script src="/assets/site.js" defer></script>
+</body>
+</html>

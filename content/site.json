@@ -1,108 +1,402 @@
 {
-  "site_name": "Crypto AI",
+  "brand": "Codevanta",
+  "site_name": "Codevanta",
   "site_url": "https://codevanta.onrender.com",
-  "meta_title": "Crypto AI | Real-Time Crypto Market Signal Support",
-  "meta_description": "Crypto AI scans market structure in real time, filters weak setups, and helps traders focus on higher-quality crypto entries.",
+  "meta_title": "Codevanta | AI Crypto Automation Workspace",
+  "meta_description": "Codevanta is a crypto automation workspace with AI-guided bot modes, signal scoring, portfolio guardrails, and a fast operator dashboard.",
   "google_site_verification": "",
-  "badge_text": "Launch access / $3",
-  "hero_title": "Crypto AI finds cleaner setups before emotion takes over.",
-  "hero_lead": "Watch the market in real time, filter weak entries, and focus on moves that deserve attention instead of chasing candles.",
-  "primary_button_text": "Buy Now",
-  "primary_button_url": "https://payhip.com/b/50WXH",
-  "secondary_button_text": "See Features",
-  "hero_card_label": "Launch package",
-  "price_text": "$3",
-  "price_note": "one-time launch access",
-  "hero_card_copy": "Get access to the launch version now and use it as a decision-support layer before making crypto entries.",
-  "disclaimer": "Decision-support software. It does not guarantee profits and should not replace risk management.",
-  "features_eyebrow": "Core features",
-  "features_heading": "What Crypto AI actually does",
-  "features_intro": "Built to reduce emotional entries and turn noisy market behavior into cleaner, more readable decision support.",
-  "why_eyebrow": "Why it matters",
-  "why_heading": "Most losses start before the trade is even opened.",
-  "why_copy": "Traders usually get hurt by timing mistakes, weak conviction, or entering on noise. Crypto AI is built to slow that process down and surface better moments for review.",
-  "workflow_eyebrow": "Simple workflow",
-  "workflow_heading": "Use it in three clear steps",
-  "workflow_intro": "The workflow stays simple so you can move from market scan to action without getting buried in unnecessary complexity.",
-  "cta_eyebrow": "Ready to test it",
-  "cta_heading": "Get Crypto AI for the $3 launch price.",
-  "cta_copy": "Early access is intentionally priced low so you can test the launch version before the future PRO upgrade expands the feature set.",
-  "cta_button_text": "Buy on Payhip",
-  "footer_text": "Crypto AI is built for market decision support, not guaranteed returns.",
-  "proof_points": [
-    "Live market structure snapshots",
-    "Signal filtering before you enter",
-    "Paper-trade style review logic"
-  ],
-  "stats": [
+  "nav_links": [
     {
-      "value": "EMA + RSI + ATR + VWAP",
-      "label": "Indicator stack behind the signal review"
+      "label": "Bots",
+      "href": "#bots"
     },
     {
-      "value": "Weak setups out",
-      "label": "Focus on fewer, better market moments"
+      "label": "Workflow",
+      "href": "#workflow"
     },
     {
-      "value": "PRO version soon",
-      "label": "Planned expansion with deeper strategy and news-aware logic"
+      "label": "Pricing",
+      "href": "#pricing"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
     }
   ],
-  "features": [
+  "hero_badge": "AI-guided crypto automation workspace",
+  "hero_title": "Codevanta builds calmer trading flows out of chaotic crypto markets.",
+  "hero_lead": "Launch bot strategies, score setups before you commit, and run your daily market routine from one focused control surface instead of five noisy tabs.",
+  "hero_primary_text": "Create Workspace",
+  "hero_secondary_text": "See Bot Modes",
+  "hero_status": "Live sandbox preview",
+  "hero_console_title": "Operator Console",
+  "hero_console_copy": "Adaptive scoring, protection layers, and ready-to-run bot modes in one workspace.",
+  "hero_metrics": [
     {
-      "title": "Real-Time Analysis",
-      "description": "Tracks live OHLCV behavior so decisions are based on the current tape, not on delayed screenshots."
+      "value": "24/7",
+      "label": "signal monitoring"
     },
     {
-      "title": "Signal Filtering",
-      "description": "Filters weak setups and low-quality entries before FOMO or revenge trading takes over."
+      "value": "5",
+      "label": "bot modes"
     },
     {
-      "title": "Indicator Stack",
-      "description": "Combines EMA, RSI, ATR, VWAP, and volatility context to improve the quality of trade selection."
-    },
-    {
-      "title": "Paper Trade Review",
-      "description": "Helps evaluate how signals would have behaved without forcing you to risk capital first."
-    },
-    {
-      "title": "Adaptive Learning",
-      "description": "Built to evolve as new market data arrives so the model can improve with fresh conditions."
-    },
-    {
-      "title": "PRO Upgrade Path",
-      "description": "A future PRO version can expand into additional strategies, stronger AI logic, and news-aware analysis."
+      "value": "3 min",
+      "label": "workspace setup"
     }
   ],
-  "reasons": [
+  "hero_points": [
+    "AI-guided setup scoring before entry",
+    "Bot templates for ranging, trend, dip, and futures markets",
+    "Risk guardrails and operator dashboard in one place"
+  ],
+  "hero_console": {
+    "pair": "BTC/USDT",
+    "signal_score": "87 / 100",
+    "market_mode": "Controlled breakout",
+    "risk_band": "Risk band: medium",
+    "bot_name": "Combo Engine",
+    "bot_state": "Ready to deploy",
+    "checkpoints": [
+      "Volatility regime confirmed",
+      "Momentum stack aligned on 4H and 1H",
+      "Exit ladder prepared before entry"
+    ]
+  },
+  "section_labels": {
+    "bots_eyebrow": "Bot architecture",
+    "bots_heading": "Five trading modes built for different market behavior",
+    "bots_intro": "Instead of one generic bot, Codevanta gives you purpose-built operating modes. Each mode has its own logic, tempo, and risk profile.",
+    "advantages_eyebrow": "Why teams switch",
+    "advantages_heading": "Less tab chaos. More repeatable decisions.",
+    "advantages_intro": "The product is designed to feel like an operator desk, not a cluttered exchange panel.",
+    "workflow_eyebrow": "Workflow",
+    "workflow_heading": "From idea to execution in a clean four-step loop",
+    "workflow_intro": "The platform keeps the path short: scan, prepare, deploy, and review.",
+    "comparison_eyebrow": "Comparison",
+    "comparison_heading": "What changes when you move from manual trading to Codevanta",
+    "comparison_intro": "The value is not just speed. It is structure, consistency, and less emotional drift.",
+    "connectors_eyebrow": "Integrations",
+    "connectors_heading": "Built around the exchange stack traders already know",
+    "connectors_intro": "Use the exchanges and market data flows your routine already depends on.",
+    "quotes_eyebrow": "Operator feedback",
+    "quotes_heading": "What the workspace changes for active crypto traders",
+    "quotes_intro": "These are the kinds of workflow gains the product is designed to create.",
+    "plans_eyebrow": "Pricing",
+    "plans_heading": "Start free, then scale into deeper automation",
+    "plans_intro": "You can enter through a free workspace and unlock higher-capacity bot plans only when your process is ready.",
+    "faq_eyebrow": "FAQ",
+    "faq_heading": "Questions traders usually ask before they commit",
+    "faq_intro": "Short answers to the operational questions that matter before onboarding.",
+    "cta_eyebrow": "Ready to move",
+    "cta_heading": "Build a Codevanta workspace and test your flow before risking size.",
+    "cta_copy": "Register in under a minute, open the sandbox app, and see how the platform organizes your market routine."
+  },
+  "bot_profiles": [
     {
-      "title": "Less emotional timing",
-      "description": "Cuts down entries triggered by hype, panic, or fast-moving candles."
+      "slug": "grid-flow",
+      "label": "Grid Flow",
+      "title": "Range capture bot for slow, repetitive market structure",
+      "summary": "Designed for sideways zones where price keeps rotating inside a clear band and patience matters more than aggression.",
+      "tags": [
+        "spot",
+        "range",
+        "steady frequency"
+      ],
+      "stat": "Best for: sideways sessions",
+      "bullets": [
+        "Layered entries across a defined zone",
+        "Automatic spacing control when volatility expands",
+        "Profit ladder designed around repeated mean reversion"
+      ]
     },
     {
-      "title": "Cleaner market focus",
-      "description": "Keeps attention on setups that deserve review instead of every chart move."
+      "slug": "dca-shield",
+      "label": "DCA Shield",
+      "title": "Averaging engine with guardrails for high-conviction positions",
+      "summary": "Built for traders who want systematic scaling without letting one entry decision dominate the whole trade idea.",
+      "tags": [
+        "spot",
+        "position build",
+        "guardrails"
+      ],
+      "stat": "Best for: staged accumulation",
+      "bullets": [
+        "Predefined averaging ladder before deployment",
+        "Capital exposure limits visible from the start",
+        "Exit map prepared together with the entry plan"
+      ]
     },
     {
-      "title": "Faster decision support",
-      "description": "Turns multiple indicators into one readable decision layer."
+      "slug": "dip-hunter",
+      "label": "Dip Hunter",
+      "title": "Momentum retrace bot for fast pullback entries",
+      "summary": "Made for active markets where trend stays intact, but the best entries appear only after a clean flush and reset.",
+      "tags": [
+        "trend",
+        "pullbacks",
+        "higher pace"
+      ],
+      "stat": "Best for: aggressive trend continuation",
+      "bullets": [
+        "Retrace validation before the bot goes active",
+        "Strength scoring around trend continuation conditions",
+        "Quick invalidation if the bounce lacks quality"
+      ]
+    },
+    {
+      "slug": "futures-pulse",
+      "label": "Futures Pulse",
+      "title": "Directional futures mode with volatility-aware protection",
+      "summary": "A faster operating profile for short-term futures setups that need strong control over invalidation and exposure.",
+      "tags": [
+        "futures",
+        "directional",
+        "risk-first"
+      ],
+      "stat": "Best for: short-term momentum bursts",
+      "bullets": [
+        "Leverage presets with exposure caps",
+        "Risk windows tied to volatility regime",
+        "Prebuilt stop and take-profit ladders"
+      ]
+    },
+    {
+      "slug": "combo-engine",
+      "label": "Combo Engine",
+      "title": "Hybrid mode that blends signal scoring with bot automation",
+      "summary": "The most flexible profile for traders who want AI scoring to decide when a bot should stay passive and when it should act.",
+      "tags": [
+        "adaptive",
+        "AI score",
+        "multi-mode"
+      ],
+      "stat": "Best for: mixed market regimes",
+      "bullets": [
+        "Bot activation can wait for a score threshold",
+        "Signal quality filters weak or noisy entries",
+        "Review loop keeps strategy logic consistent over time"
+      ]
     }
   ],
-  "steps": [
+  "advantages": [
     {
-      "number": "01",
-      "title": "Scan the market",
-      "description": "Monitor live crypto behavior and let the software highlight structure worth attention."
+      "title": "One workspace instead of scattered tools",
+      "copy": "Bot logic, setup review, watchlists, and routine checkpoints sit in one operating surface."
     },
     {
-      "number": "02",
-      "title": "Filter the setup",
-      "description": "Check whether the move still has quality after momentum, volatility, and trend filters."
+      "title": "Strategy modes with distinct personalities",
+      "copy": "You do not force every market into the same template. Each bot mode is built for a specific rhythm."
     },
     {
-      "number": "03",
-      "title": "Act with context",
-      "description": "Use the signal as decision support and keep risk management in your own hands."
+      "title": "Decision support before execution",
+      "copy": "The platform is designed to slow down weak entries and surface the cleaner ones first."
+    },
+    {
+      "title": "Reviewable process, not just raw signals",
+      "copy": "Operators can inspect why a setup was scored, filtered, delayed, or approved."
     }
-  ]
+  ],
+  "workflow_steps": [
+    {
+      "step": "01",
+      "title": "Choose the market posture",
+      "copy": "Start from range, trend, dip-buying, or futures momentum instead of forcing one strategy onto every coin."
+    },
+    {
+      "step": "02",
+      "title": "Let the engine score the setup",
+      "copy": "Trend, volatility, and confirmation layers help decide whether the market deserves action or silence."
+    },
+    {
+      "step": "03",
+      "title": "Deploy with guardrails",
+      "copy": "Entry ladder, risk band, and target logic are prepared before the bot becomes active."
+    },
+    {
+      "step": "04",
+      "title": "Review and refine the routine",
+      "copy": "A clear workspace makes it easier to see what should scale, pause, or be reconfigured next."
+    }
+  ],
+  "comparison_rows": [
+    {
+      "label": "Market scanning",
+      "codevanta": "AI-guided watchlist with setup scoring",
+      "manual": "Dozens of tabs and subjective filters",
+      "basic": "Exchange screen only"
+    },
+    {
+      "label": "Bot selection",
+      "codevanta": "Dedicated modes for range, DCA, dip, futures, and hybrid",
+      "manual": "No reusable structure",
+      "basic": "One-size-fits-all logic"
+    },
+    {
+      "label": "Risk preparation",
+      "codevanta": "Exposure caps and ladder planning before launch",
+      "manual": "Often decided during the trade",
+      "basic": "Minimal presets"
+    },
+    {
+      "label": "Routine review",
+      "codevanta": "Workspace designed around process feedback",
+      "manual": "Notes are fragmented",
+      "basic": "Little context after execution"
+    }
+  ],
+  "connectors": [
+    "Binance",
+    "Bybit",
+    "OKX",
+    "KuCoin",
+    "Kraken",
+    "Coinbase Advanced",
+    "TradingView alerts",
+    "Webhook triggers"
+  ],
+  "quotes": [
+    {
+      "quote": "The main win was not more trades. It was cutting the low-conviction ones before they drained attention.",
+      "name": "Danylo M.",
+      "role": "Independent swing trader"
+    },
+    {
+      "quote": "The app feels closer to an operator dashboard than a bot gimmick. That made it easier to trust the process.",
+      "name": "Kira V.",
+      "role": "Crypto portfolio manager"
+    },
+    {
+      "quote": "I liked being able to separate ranging logic from trend logic instead of pretending the market is always the same.",
+      "name": "Roman K.",
+      "role": "Futures trader"
+    }
+  ],
+  "plans": [
+    {
+      "name": "Starter",
+      "price": "$0",
+      "billing": "free workspace",
+      "badge": "For first-time operators",
+      "features": [
+        "1 sandbox workspace",
+        "2 bot modes unlocked",
+        "Local account access",
+        "Manual review dashboard"
+      ],
+      "cta": "Create Free Access"
+    },
+    {
+      "name": "Operator",
+      "price": "$19",
+      "billing": "per month",
+      "badge": "Most popular",
+      "features": [
+        "All 5 bot modes",
+        "AI scoring layers",
+        "Expanded watchlists",
+        "Priority automation templates"
+      ],
+      "cta": "Join Waitlist"
+    },
+    {
+      "name": "Desk",
+      "price": "$59",
+      "billing": "per month",
+      "badge": "For serious teams",
+      "features": [
+        "Multi-workspace routing",
+        "Team seats and review roles",
+        "Advanced risk presets",
+        "Connector automations"
+      ],
+      "cta": "Book Setup Call"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Codevanta fully automated?",
+      "answer": "The product is presented as an automation workspace with AI-guided deployment logic. The public demo focuses on workflow, bot modes, and operator structure rather than real-money execution."
+    },
+    {
+      "question": "Can I register right now?",
+      "answer": "Yes. The live static version includes local browser registration so you can open the workspace instantly and explore the app flow without waiting for a backend setup."
+    },
+    {
+      "question": "What kind of trader is it for?",
+      "answer": "It is designed for traders who want less emotional clicking, more process visibility, and strategy modes that match different market regimes."
+    },
+    {
+      "question": "Do I need coding knowledge?",
+      "answer": "No. The operator flow is meant to feel like a control panel, not a developer console."
+    }
+  ],
+  "cta_primary_text": "Register Free",
+  "cta_secondary_text": "Open Sandbox App",
+  "register": {
+    "title": "Create your Codevanta workspace",
+    "copy": "Register a local account in this browser and jump directly into the sandbox dashboard.",
+    "benefits": [
+      "Instant access to the workspace demo",
+      "Saved profile in your current browser",
+      "Strategy preferences remembered locally"
+    ]
+  },
+  "login": {
+    "title": "Return to your operator desk",
+    "copy": "Use your existing local workspace account to reopen the dashboard.",
+    "help": "This demo stores access only in the current browser."
+  },
+  "app": {
+    "eyebrow": "Sandbox app",
+    "title": "Your operator dashboard",
+    "copy": "A fast workspace to review market posture, bot readiness, watchlist priorities, and the next actions for the session.",
+    "stats": [
+      {
+        "value": "3",
+        "label": "active bot rooms"
+      },
+      {
+        "value": "12",
+        "label": "watchlist pairs"
+      },
+      {
+        "value": "91%",
+        "label": "guardrail compliance"
+      }
+    ],
+    "watchlist": [
+      {
+        "pair": "BTC/USDT",
+        "setup": "Combo Engine",
+        "score": "87",
+        "state": "Ready"
+      },
+      {
+        "pair": "ETH/USDT",
+        "setup": "Dip Hunter",
+        "score": "79",
+        "state": "Watching"
+      },
+      {
+        "pair": "SOL/USDT",
+        "setup": "Grid Flow",
+        "score": "73",
+        "state": "Range"
+      },
+      {
+        "pair": "LINK/USDT",
+        "setup": "Futures Pulse",
+        "score": "82",
+        "state": "Hot"
+      }
+    ],
+    "activity": [
+      "Combo Engine flagged BTC for a controlled breakout review.",
+      "DCA Shield paused one ladder because volatility expanded too fast.",
+      "Dip Hunter moved ETH from watch to confirmation after momentum improved.",
+      "Risk guardrails stayed above the session threshold."
+    ]
+  },
+  "footer_text": "Codevanta is designed as a crypto automation workspace and decision-support environment. It is not a guarantee of returns."
 }
