@@ -32,10 +32,18 @@ def hash_file(path):
 
 
 def render_nav_links(items):
-    return "\n".join(
-        f'                    <a href="{escape(item["href"])}">{escape(item["label"])}</a>'
-        for item in items
-    )
+    key_map = {
+        "#bots": "nav_bots",
+        "#workflow": "nav_workflow",
+        "#pricing": "nav_pricing",
+        "#faq": "nav_faq",
+    }
+    parts = []
+    for item in items:
+        key = key_map.get(item["href"])
+        attr = f' data-i18n="{key}"' if key else ""
+        parts.append(f'                    <a href="{escape(item["href"])}"{attr}>{escape(item["label"])}</a>')
+    return "\n".join(parts)
 
 
 def render_metric_cards(items):

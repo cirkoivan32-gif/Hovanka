@@ -192,6 +192,32 @@ p {
     gap: 0.85rem;
 }
 
+.lang-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.38rem 0.55rem 0.38rem 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.lang-label {
+    color: var(--muted);
+    font-size: 0.84rem;
+}
+
+.lang-select {
+    border: 0;
+    color: var(--text);
+    background: transparent;
+    outline: none;
+}
+
+.lang-select option {
+    color: #0b0d14;
+}
+
 .workspace-user-copy {
     display: flex;
     flex-direction: column;

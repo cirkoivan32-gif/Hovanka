@@ -25,11 +25,26 @@
                 <span>__BRAND__</span>
             </a>
             <div class="workspace-user">
+                <label class="lang-control" aria-label="Language selector">
+                    <span class="lang-label" data-i18n="language_label">Language</span>
+                    <select class="lang-select" data-language-switcher>
+                        <option value="en">English</option>
+                        <option value="uk">Українська</option>
+                        <option value="ru">Русский</option>
+                        <option value="pl">Polski</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="it">Italiano</option>
+                        <option value="pt">Português</option>
+                        <option value="tr">Türkçe</option>
+                    </select>
+                </label>
                 <div class="workspace-user-copy">
-                    <span class="mono">Sandbox workspace</span>
+                    <span class="mono" data-i18n="workspace_label">Sandbox workspace</span>
                     <strong data-session-name>Guest operator</strong>
                 </div>
-                <button class="btn btn-ghost" type="button" data-logout-button>Log out</button>
+                <button class="btn btn-ghost" type="button" data-logout-button data-i18n="log_out_text">Log out</button>
             </div>
         </div>
     </header>
@@ -38,13 +53,13 @@
         <section class="app-hero">
             <div class="container app-hero-inner">
                 <div>
-                    <p class="pill">__APP_EYEBROW__</p>
-                    <h1>__APP_TITLE__</h1>
-                    <p class="hero-lead">__APP_COPY__</p>
+                    <p class="pill" data-i18n="app_eyebrow">__APP_EYEBROW__</p>
+                    <h1 data-i18n="app_title">__APP_TITLE__</h1>
+                    <p class="hero-lead" data-i18n="app_copy">__APP_COPY__</p>
                 </div>
                 <div class="app-hero-actions">
-                    <a class="btn btn-secondary" href="/">Back to site</a>
-                    <button class="btn btn-primary js-open-login" type="button">Switch account</button>
+                    <a class="btn btn-secondary" href="/" data-i18n="back_to_site_text">Back to site</a>
+                    <button class="btn btn-primary js-open-login" type="button" data-i18n="switch_account_text">Switch account</button>
                 </div>
             </div>
         </section>
@@ -59,8 +74,8 @@ __APP_STATS__
                     <article class="panel-card reveal">
                         <div class="panel-head">
                             <div>
-                                <p class="mini-eyebrow">Priority watchlist</p>
-                                <h2>Market focus for this session</h2>
+                                <p class="mini-eyebrow" data-i18n="priority_watchlist">Priority watchlist</p>
+                                <h2 data-i18n="market_focus_session">Market focus for this session</h2>
                             </div>
                             <span class="console-pill" data-session-focus>Mixed routine</span>
                         </div>
@@ -68,10 +83,10 @@ __APP_STATS__
                             <table class="comparison-table app-table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Mode</th>
-                                        <th scope="col">Score</th>
-                                        <th scope="col">State</th>
+                                        <th scope="col" data-i18n="pair_label">Pair</th>
+                                        <th scope="col" data-i18n="mode_label">Mode</th>
+                                        <th scope="col" data-i18n="score_label">Score</th>
+                                        <th scope="col" data-i18n="state_label">State</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -84,10 +99,10 @@ __WATCHLIST_ROWS__
                     <article class="panel-card reveal">
                         <div class="panel-head">
                             <div>
-                                <p class="mini-eyebrow">Strategy rooms</p>
-                                <h2>Bot stack inside the workspace</h2>
+                                <p class="mini-eyebrow" data-i18n="strategy_rooms">Strategy rooms</p>
+                                <h2 data-i18n="bot_stack_inside_workspace">Bot stack inside the workspace</h2>
                             </div>
-                            <span class="mono">Local sandbox data</span>
+                            <span class="mono" data-i18n="local_sandbox_data">Local sandbox data</span>
                         </div>
                         <div class="room-grid">
                             <article class="room-card">
@@ -113,21 +128,21 @@ __WATCHLIST_ROWS__
                     <article class="panel-card reveal">
                         <div class="panel-head">
                             <div>
-                                <p class="mini-eyebrow">Operator identity</p>
-                                <h2>Current workspace profile</h2>
+                                <p class="mini-eyebrow" data-i18n="operator_identity">Operator identity</p>
+                                <h2 data-i18n="current_workspace_profile">Current workspace profile</h2>
                             </div>
                         </div>
                         <dl class="profile-list">
                             <div>
-                                <dt>Name</dt>
+                                <dt data-i18n="name_label">Name</dt>
                                 <dd data-profile-name>Guest operator</dd>
                             </div>
                             <div>
-                                <dt>Email</dt>
+                                <dt data-i18n="email_label">Email</dt>
                                 <dd data-profile-email>Not connected</dd>
                             </div>
                             <div>
-                                <dt>Focus</dt>
+                                <dt data-i18n="focus_label">Focus</dt>
                                 <dd data-profile-focus>Mixed routine</dd>
                             </div>
                         </dl>
@@ -136,8 +151,8 @@ __WATCHLIST_ROWS__
                     <article class="panel-card reveal">
                         <div class="panel-head">
                             <div>
-                                <p class="mini-eyebrow">Activity</p>
-                                <h2>Latest sandbox signals</h2>
+                                <p class="mini-eyebrow" data-i18n="activity_label">Activity</p>
+                                <h2 data-i18n="latest_sandbox_signals">Latest sandbox signals</h2>
                             </div>
                         </div>
                         <ul class="activity-list">
@@ -148,12 +163,12 @@ __APP_ACTIVITY__
                     <article class="panel-card reveal">
                         <div class="panel-head">
                             <div>
-                                <p class="mini-eyebrow">Next move</p>
-                                <h2>Upgrade path</h2>
+                                <p class="mini-eyebrow" data-i18n="next_move">Next move</p>
+                                <h2 data-i18n="upgrade_path">Upgrade path</h2>
                             </div>
                         </div>
-                        <p class="panel-copy">Use the static workspace as the public demo layer. If you need real server-side auth and persistent user accounts, the next step is attaching a backend auth service and database.</p>
-                        <a class="btn btn-primary" href="/">Back to pricing</a>
+                        <p class="panel-copy" data-i18n="upgrade_path_copy">Use the static workspace as the public demo layer. If you need real server-side auth and persistent user accounts, the next step is attaching a backend auth service and database.</p>
+                        <a class="btn btn-primary" href="/" data-i18n="back_to_pricing_text">Back to pricing</a>
                     </article>
                 </aside>
             </div>
@@ -165,22 +180,22 @@ __APP_ACTIVITY__
         <div class="modal-shell">
             <section class="modal-card" data-modal="login" hidden>
                 <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">&times;</button>
-                <p class="pill">Workspace access</p>
-                <h2>Open your saved sandbox</h2>
-                <p class="modal-copy">Log in with the local account saved in this browser.</p>
+                <p class="pill" data-i18n="workspace_access">Workspace access</p>
+                <h2 data-i18n="open_saved_sandbox">Open your saved sandbox</h2>
+                <p class="modal-copy" data-i18n="login_copy">Log in with the local account saved in this browser.</p>
                 <form class="auth-form" data-auth-form="login">
                     <label>
-                        <span>Email</span>
-                        <input type="email" name="email" placeholder="you@example.com" required>
+                        <span data-i18n="email_label">Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" data-i18n-placeholder="email_placeholder" required>
                     </label>
                     <label>
-                        <span>Password</span>
-                        <input type="password" name="password" placeholder="Your saved password" minlength="8" required>
+                        <span data-i18n="password_label">Password</span>
+                        <input type="password" name="password" placeholder="Your saved password" data-i18n-placeholder="saved_password_placeholder" minlength="8" required>
                     </label>
-                    <button class="btn btn-primary" type="submit">Open workspace</button>
+                    <button class="btn btn-primary" type="submit" data-i18n="open_workspace_text">Open workspace</button>
                     <p class="form-status" data-form-status="login" aria-live="polite"></p>
                 </form>
-                <p class="modal-switch">Need an account first? <a class="link-inline" href="/">Register on the main page</a></p>
+                <p class="modal-switch"><span data-i18n="need_account_first">Need an account first?</span> <a class="link-inline" href="/" data-i18n="register_on_main">Register on the main page</a></p>
             </section>
         </div>
     </div>

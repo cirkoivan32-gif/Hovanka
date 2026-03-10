@@ -35,8 +35,23 @@ __GOOGLE_SITE_VERIFICATION__    <link rel="preconnect" href="https://fonts.googl
 __NAV_LINKS__
             </nav>
             <div class="topbar-actions">
-                <a class="btn btn-ghost" href="/app/">Open app</a>
-                <button class="btn btn-primary js-open-register" type="button">Register</button>
+                <label class="lang-control" aria-label="Language selector">
+                    <span class="lang-label" data-i18n="language_label">Language</span>
+                    <select class="lang-select" data-language-switcher>
+                        <option value="en">English</option>
+                        <option value="uk">Українська</option>
+                        <option value="ru">Русский</option>
+                        <option value="pl">Polski</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="it">Italiano</option>
+                        <option value="pt">Português</option>
+                        <option value="tr">Türkçe</option>
+                    </select>
+                </label>
+                <a class="btn btn-ghost" href="/app/" data-i18n="open_app_text">Open app</a>
+                <button class="btn btn-primary js-open-register" type="button" data-i18n="register_button_text">Register</button>
             </div>
         </div>
     </header>
@@ -45,13 +60,13 @@ __NAV_LINKS__
         <section class="hero-block">
             <div class="container hero-layout">
                 <div class="hero-copy">
-                    <p class="pill">__HERO_BADGE__</p>
-                    <h1>__HERO_TITLE__</h1>
-                    <p class="hero-lead">__HERO_LEAD__</p>
+                    <p class="pill" data-i18n="hero_badge">__HERO_BADGE__</p>
+                    <h1 data-i18n="hero_title">__HERO_TITLE__</h1>
+                    <p class="hero-lead" data-i18n="hero_lead">__HERO_LEAD__</p>
 
                     <div class="hero-actions">
-                        <button class="btn btn-primary js-open-register" type="button">__HERO_PRIMARY_TEXT__</button>
-                        <a class="btn btn-secondary" href="#bots">__HERO_SECONDARY_TEXT__</a>
+                        <button class="btn btn-primary js-open-register" type="button" data-i18n="hero_primary_text">__HERO_PRIMARY_TEXT__</button>
+                        <a class="btn btn-secondary" href="#bots" data-i18n="hero_secondary_text">__HERO_SECONDARY_TEXT__</a>
                     </div>
 
                     <div class="hero-points">
@@ -67,40 +82,40 @@ __HERO_METRICS__
 
                 <aside class="hero-console reveal">
                     <div class="console-head">
-                        <p class="mini-eyebrow">__HERO_STATUS__</p>
+                        <p class="mini-eyebrow" data-i18n="hero_status">__HERO_STATUS__</p>
                         <span class="live-dot"></span>
                     </div>
                     <div class="console-screen">
                         <div class="console-title-row">
                             <div>
-                                <p class="console-overline">__HERO_CONSOLE_TITLE__</p>
-                                <h2>__HERO_CONSOLE_COPY__</h2>
+                                <p class="console-overline" data-i18n="hero_console_title">__HERO_CONSOLE_TITLE__</p>
+                                <h2 data-i18n="hero_console_copy">__HERO_CONSOLE_COPY__</h2>
                             </div>
                             <span class="console-pill">__CONSOLE_PAIR__</span>
                         </div>
 
                         <div class="console-grid">
                             <article class="console-card">
-                                <p class="console-label">Signal score</p>
+                                <p class="console-label" data-i18n="signal_score_label">Signal score</p>
                                 <strong>__CONSOLE_SIGNAL_SCORE__</strong>
                             </article>
                             <article class="console-card">
-                                <p class="console-label">Market mode</p>
+                                <p class="console-label" data-i18n="market_mode_label">Market mode</p>
                                 <strong>__CONSOLE_MARKET_MODE__</strong>
                             </article>
                             <article class="console-card">
-                                <p class="console-label">Risk band</p>
+                                <p class="console-label" data-i18n="risk_band_label">Risk band</p>
                                 <strong>__CONSOLE_RISK_BAND__</strong>
                             </article>
                             <article class="console-card">
-                                <p class="console-label">Selected bot</p>
+                                <p class="console-label" data-i18n="selected_bot_label">Selected bot</p>
                                 <strong>__CONSOLE_BOT_NAME__</strong>
                                 <small>__CONSOLE_BOT_STATE__</small>
                             </article>
                         </div>
 
                         <div class="console-checklist">
-                            <p class="console-label">Session checkpoints</p>
+                            <p class="console-label" data-i18n="session_checkpoints_label">Session checkpoints</p>
                             <ul>
 __CONSOLE_CHECKPOINTS__
                             </ul>
@@ -113,9 +128,9 @@ __CONSOLE_CHECKPOINTS__
         <section id="bots" class="section">
             <div class="container">
                 <div class="section-copy">
-                    <p class="pill">__BOTS_EYEBROW__</p>
-                    <h2>__BOTS_HEADING__</h2>
-                    <p>__BOTS_INTRO__</p>
+                    <p class="pill" data-i18n="bots_eyebrow">__BOTS_EYEBROW__</p>
+                    <h2 data-i18n="bots_heading">__BOTS_HEADING__</h2>
+                    <p data-i18n="bots_intro">__BOTS_INTRO__</p>
                 </div>
 
                 <div class="bot-showcase">
@@ -132,9 +147,9 @@ __BOT_PANELS__
         <section class="section section-alt">
             <div class="container">
                 <div class="section-copy">
-                    <p class="pill">__ADVANTAGES_EYEBROW__</p>
-                    <h2>__ADVANTAGES_HEADING__</h2>
-                    <p>__ADVANTAGES_INTRO__</p>
+                    <p class="pill" data-i18n="advantages_eyebrow">__ADVANTAGES_EYEBROW__</p>
+                    <h2 data-i18n="advantages_heading">__ADVANTAGES_HEADING__</h2>
+                    <p data-i18n="advantages_intro">__ADVANTAGES_INTRO__</p>
                 </div>
                 <div class="advantage-grid">
 __ADVANTAGE_CARDS__
@@ -145,9 +160,9 @@ __ADVANTAGE_CARDS__
         <section id="workflow" class="section">
             <div class="container">
                 <div class="section-copy">
-                    <p class="pill">__WORKFLOW_EYEBROW__</p>
-                    <h2>__WORKFLOW_HEADING__</h2>
-                    <p>__WORKFLOW_INTRO__</p>
+                    <p class="pill" data-i18n="workflow_eyebrow">__WORKFLOW_EYEBROW__</p>
+                    <h2 data-i18n="workflow_heading">__WORKFLOW_HEADING__</h2>
+                    <p data-i18n="workflow_intro">__WORKFLOW_INTRO__</p>
                 </div>
                 <div class="workflow-grid">
 __WORKFLOW_CARDS__
@@ -158,18 +173,18 @@ __WORKFLOW_CARDS__
         <section class="section section-alt">
             <div class="container">
                 <div class="section-copy">
-                    <p class="pill">__COMPARISON_EYEBROW__</p>
-                    <h2>__COMPARISON_HEADING__</h2>
-                    <p>__COMPARISON_INTRO__</p>
+                    <p class="pill" data-i18n="comparison_eyebrow">__COMPARISON_EYEBROW__</p>
+                    <h2 data-i18n="comparison_heading">__COMPARISON_HEADING__</h2>
+                    <p data-i18n="comparison_intro">__COMPARISON_INTRO__</p>
                 </div>
                 <div class="comparison-shell reveal">
                     <table class="comparison-table">
                         <thead>
                             <tr>
-                                <th scope="col">Capability</th>
+                                <th scope="col" data-i18n="comparison_capability">Capability</th>
                                 <th scope="col">Codevanta</th>
-                                <th scope="col">Manual flow</th>
-                                <th scope="col">Basic exchange tools</th>
+                                <th scope="col" data-i18n="comparison_manual">Manual flow</th>
+                                <th scope="col" data-i18n="comparison_basic">Basic exchange tools</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -183,9 +198,9 @@ __COMPARISON_ROWS__
         <section class="section">
             <div class="container connector-layout">
                 <div class="section-copy">
-                    <p class="pill">__CONNECTORS_EYEBROW__</p>
-                    <h2>__CONNECTORS_HEADING__</h2>
-                    <p>__CONNECTORS_INTRO__</p>
+                    <p class="pill" data-i18n="connectors_eyebrow">__CONNECTORS_EYEBROW__</p>
+                    <h2 data-i18n="connectors_heading">__CONNECTORS_HEADING__</h2>
+                    <p data-i18n="connectors_intro">__CONNECTORS_INTRO__</p>
                 </div>
                 <ul class="connector-grid" aria-label="Supported connectors">
 __CONNECTOR_CHIPS__
@@ -196,9 +211,9 @@ __CONNECTOR_CHIPS__
         <section class="section section-alt">
             <div class="container">
                 <div class="section-copy">
-                    <p class="pill">__QUOTES_EYEBROW__</p>
-                    <h2>__QUOTES_HEADING__</h2>
-                    <p>__QUOTES_INTRO__</p>
+                    <p class="pill" data-i18n="quotes_eyebrow">__QUOTES_EYEBROW__</p>
+                    <h2 data-i18n="quotes_heading">__QUOTES_HEADING__</h2>
+                    <p data-i18n="quotes_intro">__QUOTES_INTRO__</p>
                 </div>
                 <div class="quote-grid">
 __QUOTE_CARDS__
@@ -209,9 +224,9 @@ __QUOTE_CARDS__
         <section id="pricing" class="section">
             <div class="container">
                 <div class="section-copy">
-                    <p class="pill">__PLANS_EYEBROW__</p>
-                    <h2>__PLANS_HEADING__</h2>
-                    <p>__PLANS_INTRO__</p>
+                    <p class="pill" data-i18n="plans_eyebrow">__PLANS_EYEBROW__</p>
+                    <h2 data-i18n="plans_heading">__PLANS_HEADING__</h2>
+                    <p data-i18n="plans_intro">__PLANS_INTRO__</p>
                 </div>
                 <div class="plan-grid">
 __PLAN_CARDS__
@@ -222,9 +237,9 @@ __PLAN_CARDS__
         <section id="faq" class="section section-alt">
             <div class="container faq-layout">
                 <div class="section-copy">
-                    <p class="pill">__FAQ_EYEBROW__</p>
-                    <h2>__FAQ_HEADING__</h2>
-                    <p>__FAQ_INTRO__</p>
+                    <p class="pill" data-i18n="faq_eyebrow">__FAQ_EYEBROW__</p>
+                    <h2 data-i18n="faq_heading">__FAQ_HEADING__</h2>
+                    <p data-i18n="faq_intro">__FAQ_INTRO__</p>
                 </div>
                 <div class="faq-list">
 __FAQ_ITEMS__
@@ -235,13 +250,13 @@ __FAQ_ITEMS__
         <section class="section">
             <div class="container cta-shell reveal">
                 <div>
-                    <p class="pill">__CTA_EYEBROW__</p>
-                    <h2>__CTA_HEADING__</h2>
-                    <p>__CTA_COPY__</p>
+                    <p class="pill" data-i18n="cta_eyebrow">__CTA_EYEBROW__</p>
+                    <h2 data-i18n="cta_heading">__CTA_HEADING__</h2>
+                    <p data-i18n="cta_copy">__CTA_COPY__</p>
                 </div>
                 <div class="cta-actions">
-                    <button class="btn btn-primary js-open-register" type="button">__CTA_PRIMARY_TEXT__</button>
-                    <a class="btn btn-ghost" href="/app/">__CTA_SECONDARY_TEXT__</a>
+                    <button class="btn btn-primary js-open-register" type="button" data-i18n="cta_primary_text">__CTA_PRIMARY_TEXT__</button>
+                    <a class="btn btn-ghost" href="/app/" data-i18n="cta_secondary_text">__CTA_SECONDARY_TEXT__</a>
                 </div>
             </div>
         </section>
@@ -253,7 +268,7 @@ __FAQ_ITEMS__
                 <span class="brandmark-icon"></span>
                 <span>__BRAND__</span>
             </a>
-            <p>__FOOTER_TEXT__</p>
+            <p data-i18n="footer_text">__FOOTER_TEXT__</p>
         </div>
     </footer>
 
@@ -262,59 +277,59 @@ __FAQ_ITEMS__
         <div class="modal-shell">
             <section class="modal-card" data-modal="register" hidden>
                 <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">&times;</button>
-                <p class="pill">Instant workspace access</p>
-                <h2>__REGISTER_TITLE__</h2>
-                <p class="modal-copy">__REGISTER_COPY__</p>
+                <p class="pill" data-i18n="instant_workspace_access">Instant workspace access</p>
+                <h2 data-i18n="register_title">__REGISTER_TITLE__</h2>
+                <p class="modal-copy" data-i18n="register_copy">__REGISTER_COPY__</p>
                 <ul class="modal-benefits">
 __REGISTER_BENEFITS__
                 </ul>
                 <form class="auth-form" data-auth-form="register">
                     <label>
-                        <span>Name</span>
-                        <input type="text" name="name" placeholder="Your operator name" required>
+                        <span data-i18n="name_label">Name</span>
+                        <input type="text" name="name" placeholder="Your operator name" data-i18n-placeholder="name_placeholder" required>
                     </label>
                     <label>
-                        <span>Email</span>
-                        <input type="email" name="email" placeholder="you@example.com" required>
+                        <span data-i18n="email_label">Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" data-i18n-placeholder="email_placeholder" required>
                     </label>
                     <label>
-                        <span>Password</span>
-                        <input type="password" name="password" placeholder="At least 8 characters" minlength="8" required>
+                        <span data-i18n="password_label">Password</span>
+                        <input type="password" name="password" placeholder="At least 8 characters" data-i18n-placeholder="password_placeholder" minlength="8" required>
                     </label>
                     <label>
-                        <span>Focus</span>
+                        <span data-i18n="focus_label">Focus</span>
                         <select name="focus">
-                            <option value="Spot swing">Spot swing</option>
-                            <option value="Futures momentum">Futures momentum</option>
-                            <option value="DCA building">DCA building</option>
-                            <option value="Mixed routine">Mixed routine</option>
+                            <option value="Spot swing" data-i18n="focus_option_1">Spot swing</option>
+                            <option value="Futures momentum" data-i18n="focus_option_2">Futures momentum</option>
+                            <option value="DCA building" data-i18n="focus_option_3">DCA building</option>
+                            <option value="Mixed routine" data-i18n="focus_option_4">Mixed routine</option>
                         </select>
                     </label>
-                    <button class="btn btn-primary" type="submit">Create local workspace</button>
+                    <button class="btn btn-primary" type="submit" data-i18n="create_local_workspace">Create local workspace</button>
                     <p class="form-status" data-form-status="register" aria-live="polite"></p>
                 </form>
-                <p class="modal-switch">Already registered? <button type="button" class="link-button" data-switch-modal="login">Log in</button></p>
+                <p class="modal-switch"><span data-i18n="already_registered">Already registered?</span> <button type="button" class="link-button" data-switch-modal="login" data-i18n="log_in_text">Log in</button></p>
             </section>
 
             <section class="modal-card" data-modal="login" hidden>
                 <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">&times;</button>
-                <p class="pill">Welcome back</p>
-                <h2>__LOGIN_TITLE__</h2>
-                <p class="modal-copy">__LOGIN_COPY__</p>
+                <p class="pill" data-i18n="welcome_back">Welcome back</p>
+                <h2 data-i18n="login_title">__LOGIN_TITLE__</h2>
+                <p class="modal-copy" data-i18n="login_copy">__LOGIN_COPY__</p>
                 <form class="auth-form" data-auth-form="login">
                     <label>
-                        <span>Email</span>
-                        <input type="email" name="email" placeholder="you@example.com" required>
+                        <span data-i18n="email_label">Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" data-i18n-placeholder="email_placeholder" required>
                     </label>
                     <label>
-                        <span>Password</span>
-                        <input type="password" name="password" placeholder="Your saved password" minlength="8" required>
+                        <span data-i18n="password_label">Password</span>
+                        <input type="password" name="password" placeholder="Your saved password" data-i18n-placeholder="saved_password_placeholder" minlength="8" required>
                     </label>
-                    <button class="btn btn-primary" type="submit">Open workspace</button>
+                    <button class="btn btn-primary" type="submit" data-i18n="open_workspace_text">Open workspace</button>
                     <p class="form-status" data-form-status="login" aria-live="polite"></p>
                 </form>
-                <p class="modal-hint">__LOGIN_HELP__</p>
-                <p class="modal-switch">Need a new account? <button type="button" class="link-button" data-switch-modal="register">Register</button></p>
+                <p class="modal-hint" data-i18n="login_help">__LOGIN_HELP__</p>
+                <p class="modal-switch"><span data-i18n="need_new_account">Need a new account?</span> <button type="button" class="link-button" data-switch-modal="register" data-i18n="register_text">Register</button></p>
             </section>
         </div>
     </div>
