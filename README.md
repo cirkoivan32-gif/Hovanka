@@ -47,6 +47,7 @@ python manage.py ensure_admin
 
 - `DJANGO_SECRET_KEY`
 - `DJANGO_DEBUG=False`
+- `DJANGO_SECURE_SSL_REDIRECT=False` for Render health checks, unless you explicitly re-enable it
 - `DATABASE_URL`
 - `DJANGO_SUPERUSER_USERNAME`
 - `DJANGO_SUPERUSER_EMAIL`

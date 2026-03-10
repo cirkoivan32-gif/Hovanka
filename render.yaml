@@ -13,6 +13,8 @@ services:
     envVars:
       - key: DJANGO_DEBUG
         value: false
+      - key: DJANGO_SECURE_SSL_REDIRECT
+        value: false
       - key: DJANGO_SECRET_KEY
         generateValue: true
       - key: DATABASE_URL
