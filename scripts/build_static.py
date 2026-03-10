@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 import shutil
@@ -23,6 +24,11 @@ def load_content():
     if os.getenv("GOOGLE_SITE_VERIFICATION"):
         content["google_site_verification"] = os.environ["GOOGLE_SITE_VERIFICATION"].strip()
     return content
+
+
+def hash_file(path):
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    return digest[:12]
 
 
 def render_nav_links(items):
@@ -288,6 +294,8 @@ def render_template(template_path, replacements):
 def build():
     content = load_content()
     site_json = json.dumps(content, ensure_ascii=False).replace("</", "<\\/")
+    style_version = hash_file(SOURCE_CSS_PATH)
+    script_version = hash_file(SOURCE_JS_PATH)
 
     if DIST_DIR.exists():
         shutil.rmtree(DIST_DIR)
@@ -312,6 +320,8 @@ def build():
         "__NAV_LINKS__": render_nav_links(content["nav_links"]),
         "__FOOTER_TEXT__": escape(content["footer_text"]),
         "__SITE_DATA_JSON__": site_json,
+        "__STYLE_URL__": f"/assets/style.css?v={style_version}",
+        "__SCRIPT_URL__": f"/assets/site.js?v={script_version}",
     }
 
     index_replacements = {
